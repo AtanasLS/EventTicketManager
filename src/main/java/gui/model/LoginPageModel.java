@@ -1,4 +1,13 @@
 package gui.model;
 
-public class LoginPageModel {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginPageModel implements Initializable {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

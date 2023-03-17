@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dal/DataAccessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/DataAccessManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/EventCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/EventCoordinator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678979229703</updated>
-      <workItem from="1678979231413" duration="4700000" />
+      <workItem from="1678979231413" duration="8189000" />
     </task>
     <servers />
   </component>

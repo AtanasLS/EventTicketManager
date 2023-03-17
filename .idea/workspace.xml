@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/LoginPageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/LoginPageModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dal/DataAccessManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/DataAccessManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +32,34 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "C:/Program Files/Java/sqljdbc_11.2/enu/mssql-jdbc-11.2.1.jre18.jar",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DataAccessManager">
+    <configuration name="DataAccessManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dal.DataAccessManager" />
+      <module name="EventTicketManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="EventTicketManager" />
@@ -48,6 +69,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataAccessManager" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -60,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678979229703</updated>
-      <workItem from="1678979231413" duration="2194000" />
+      <workItem from="1678979231413" duration="4700000" />
     </task>
     <servers />
   </component>

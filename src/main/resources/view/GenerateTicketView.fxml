@@ -1,14 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.GenerateTicketView"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.GenerateTicketController">
+    <top>
+        <VBox prefHeight="69.0" prefWidth="486.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="50.0" prefWidth="402.0" text="Ticket Number" textAlignment="CENTER">
+                    <font>
+                        <Font name="Gill Sans MT" size="28.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+    <left>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+    </left>
+    <right>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+    </right>
+    <bottom>
+        <HBox prefHeight="20.0" prefWidth="486.0" BorderPane.alignment="CENTER" />
+    </bottom>
+    <center>
+        <VBox prefHeight="191.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="54.0" prefWidth="286.0">
+                    <children>
+                        <MFXTextField fx:id="nameField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Name">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </MFXTextField>
+                    </children>
+                </HBox>
+                <HBox prefHeight="53.0" prefWidth="286.0">
+               <children>
+                  <MFXTextField fx:id="eMailField" floatMode="ABOVE" prefHeight="49.0" prefWidth="282.0" promptText="E-Mail">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+                </HBox>
+                <HBox layoutX="10.0" layoutY="73.0" prefHeight="62.0" prefWidth="286.0">
+               <children>
+                  <MFXTextField fx:id="eventField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Event">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+                </HBox>
+            <HBox prefHeight="45.0" prefWidth="286.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <MFXButton fx:id="genBtn" prefHeight="38.0" prefWidth="106.0" text="Generate">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </MFXButton>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

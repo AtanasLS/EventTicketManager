@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -27,9 +27,9 @@ public class CustomerDAO {
 
                 //Saving result data as variables
                 while (resultSet.next()) {
-                    int id = resultSet.getInt("ID");
-                    String email = resultSet.getString("E-Mail");
-                    String name = resultSet.getString("Name");
+                    int id = resultSet.getInt("customerId");
+                    String email = resultSet.getString("email");
+                    String name = resultSet.getString("customer_name");
 
 
                     //Creating movie object

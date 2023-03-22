@@ -27,12 +27,12 @@ public class EventDAO {
 
                 //Saving result data as variables
                 while (resultSet.next()) {
-                    int id = resultSet.getInt("ID");
-                    String name = resultSet.getString("Name");
-                    String type = resultSet.getString("Type");
-                    Date startDate = resultSet.getDate("Start Date");
-                    Date endDate = resultSet.getDate("End Date");
-                    String location = resultSet.getString("Location");
+                    int id = resultSet.getInt("eventId");
+                    String name = resultSet.getString("event_name");
+                    String type = resultSet.getString("event_type");
+                    Date startDate = resultSet.getDate("event_date");
+                    Date endDate = resultSet.getDate("event_end_date");
+                    String location = resultSet.getString("location");
 
                     //Creating movie object
                     Event event= new Event(id, name,type,startDate, endDate, location );

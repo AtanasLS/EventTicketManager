@@ -28,10 +28,10 @@ public class UserDAO {
 
                 //Saving result data as variables
                 while (resultSet.next()) {
-                    int id = resultSet.getInt("ID");
-                    String username = resultSet.getString("Username");
-                    String password = resultSet.getString("Password");
-                    String type = resultSet.getString("Type");
+                    int id = resultSet.getInt("userId");
+                    String username = resultSet.getString("userName");
+                    String password = resultSet.getString("password");
+                    String type = resultSet.getString("type");
 
                     //Creating movie object
                     User user = new User(id, username, password, type);

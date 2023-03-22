@@ -30,9 +30,9 @@ public class TicketDAO {
 
                 //Saving result data as variables
                 while (resultSet.next()) {
-                    int ticketId = resultSet.getInt("Ticket ID");
-                    int customerId = resultSet.getInt("Customer ID");
-                    int eventId = resultSet.getInt("Event Id");
+                    int ticketId = resultSet.getInt("ticketId");
+                    int customerId = resultSet.getInt("customerId");
+                    int eventId = resultSet.getInt("eventId");
 
                     //Creating movie object
                     Ticket ticket = new Ticket(ticketId,customerId,eventId);

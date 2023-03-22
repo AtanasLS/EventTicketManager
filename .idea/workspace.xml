@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="" />
+    <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/materialfx-11.15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/virtualizedfx-11.2.6.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/GenerateTicketView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/GenerateTicketView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LoginPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LoginPageView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +38,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
@@ -85,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678979229703</updated>
       <workItem from="1678979231413" duration="8189000" />
-      <workItem from="1679350086330" duration="352000" />
+      <workItem from="1679350086330" duration="5178000" />
     </task>
     <servers />
   </component>

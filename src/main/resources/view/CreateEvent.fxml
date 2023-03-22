@@ -38,7 +38,7 @@
             <children>
                 <HBox prefHeight="54.0" prefWidth="286.0">
                     <children>
-                        <MFXTextField fx:id="nameField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Name">
+                        <MFXTextField  floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Name">
                             <font>
                                 <Font size="17.0" />
                             </font>
@@ -47,7 +47,7 @@
                 </HBox>
                 <HBox prefHeight="53.0" prefWidth="286.0">
                     <children>
-                        <MFXTextField fx:id="eMailField" floatMode="ABOVE" prefHeight="49.0" prefWidth="282.0" promptText="E-Mail">
+                        <MFXTextField  floatMode="ABOVE" prefHeight="49.0" prefWidth="282.0" promptText="E-Mail">
                             <font>
                                 <Font size="17.0" />
                             </font>
@@ -56,7 +56,7 @@
                 </HBox>
                 <HBox layoutX="10.0" layoutY="73.0" prefHeight="62.0" prefWidth="286.0">
                     <children>
-                        <MFXTextField fx:id="eventField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Event">
+                        <MFXTextField  floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Event">
                             <font>
                                 <Font size="17.0" />
                             </font>
@@ -68,7 +68,7 @@
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <MFXButton fx:id="genBtn" prefHeight="38.0" prefWidth="106.0" text="Generate">
+                                <MFXButton  prefHeight="38.0" prefWidth="106.0" text="Generate">
                                     <HBox.margin>
                                         <Insets />
                                     </HBox.margin>

@@ -1,5 +1,6 @@
 package gui.controller;
 
+
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -12,3 +13,4 @@ public class GenerateTicketController implements Initializable {
 
     }
 }
+

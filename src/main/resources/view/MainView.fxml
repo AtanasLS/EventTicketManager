@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="gui.controller.MainViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="510.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
+    <children>
+        <Label fx:id="nameLabel" alignment="CENTER" layoutX="46.0" layoutY="22.0" prefHeight="40.0" prefWidth="108.0" text="Label">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <TableView fx:id="EventLabels" layoutX="23.0" layoutY="108.0" prefHeight="342.0" prefWidth="360.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+            </columns>
+        </TableView>
+        <TableView fx:id="ManagerLabels" layoutX="514.0" layoutY="108.0" prefHeight="342.0" prefWidth="360.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+            </columns>
+        </TableView>
+        <MFXButton fx:id="addManBtn" layoutX="514.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Add Manager" />
+        <MFXButton fx:id="setManBtn" layoutX="394.0" layoutY="259.0" prefHeight="40.0" prefWidth="108.0" text="Set Manager" />
+        <MFXButton fx:id="delManBtn" layoutX="640.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Delete Maneger" />
+        <MFXButton fx:id="addEventBtn" layoutX="23.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Add Event" />
+        <MFXButton fx:id="delEventBtn" layoutX="154.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Delete Event" />
+        <MFXButton fx:id="genTicketBtn" layoutX="739.0" layoutY="22.0" prefHeight="40.0" prefWidth="108.0" text="Generate Ticket" />
+    </children>
 </AnchorPane>

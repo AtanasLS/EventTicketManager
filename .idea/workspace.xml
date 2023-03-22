@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dal/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/dao/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dal/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/LoginPageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/LoginPageModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LoginPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LoginPageView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dal/dao/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/dao/EventDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AddManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/AddManagerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Program Files/Java/sqljdbc_11.2/enu/mssql-jdbc-11.2.1.jre18.jar",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
@@ -76,10 +77,15 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="EventTicketManager" />
+      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Downloads/javafx-sdk-19/lib  --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DataAccessManager" />
+      <item itemvalue="Application.Main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />

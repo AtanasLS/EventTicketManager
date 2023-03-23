@@ -11,6 +11,9 @@
     <orderEntry type="library" name="mssql-jdbc-11.2.1.jre8" level="project" />
     <orderEntry type="library" name="javax.xml.bind.jaxb.api" level="project" />
     <orderEntry type="library" name="io.github.palexdev.materialfx" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="javafx-swt" level="project" />
+    <orderEntry type="library" name="lib2" level="project" />
   </component>
 </module>

@@ -1,16 +1,17 @@
 package be;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Event {
     private int id;
     private String name;
     private String type;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private String location;
 
-    public Event(int id, String name, String type, Date startDate, Date endDate, String location){
+    public Event(int id, String name, String type, LocalDate startDate, LocalDate endDate, String location){
         this.id = id;
         this.name = name;
         this.type = type;
@@ -43,19 +44,19 @@ public class Event {
         this.type = type;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

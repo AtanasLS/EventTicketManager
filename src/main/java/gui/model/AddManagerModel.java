@@ -3,6 +3,7 @@ package gui.model;
 import be.Event;
 import be.User;
 import dal.dao.UserDAO;
+import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
 import java.util.Date;
@@ -30,5 +31,8 @@ public class AddManagerModel {
         }else {
             return token;
         }
+    }
+    public ObservableList<User> getAllUsers(){
+        return    userDAO.getAllUsers();
     }
 }

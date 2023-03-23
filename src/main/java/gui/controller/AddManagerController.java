@@ -23,16 +23,18 @@ public class AddManagerController implements Initializable {
     public MFXButton addBtn,closeB;
 
     private AddManagerModel model;
+    private MainViewController mainViewController;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         model=new AddManagerModel();
+        mainViewController = new MainViewController();
     }
 
 
     public void addManager(ActionEvent actionEvent) throws SQLException {
 
-        if (model.addManager(usernameField.getText(),passwordField.getText(),"manager")){
+        if (model.addManager(usernameField.getText(),passwordField.getText(),"Event Coordinator")){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password");
             alert.showAndWait();
         }else {
@@ -45,7 +47,6 @@ public class AddManagerController implements Initializable {
 }
 
     public void close(){
-
         Stage stage = (Stage) closeB.getScene().getWindow();
         stage.close();
     }

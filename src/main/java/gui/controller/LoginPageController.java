@@ -1,8 +1,10 @@
 package gui.controller;
 
+import be.User;
 import dal.dao.UserDAO;
 import gui.model.LoginPageModel;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LoginPageController implements Initializable {
@@ -24,6 +27,11 @@ public class LoginPageController implements Initializable {
     public MFXTextField usernameField, passwordField;
 
     private LoginPageModel model;
+
+    public User loggedInUser ;
+
+
+
 
 
     @Override
@@ -35,15 +43,19 @@ public class LoginPageController implements Initializable {
     public void logIn(ActionEvent actionEvent) {
         if (model.checkIfUserExist(usernameField.getText(), passwordField.getText())){
             try {
+
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
                 Parent root = loader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
+                User loggedInUser = model.getUser(usernameField.getText());
+                MainViewController controller = loader.getController();
+                controller.setLoggedInUser(loggedInUser.getUsername(), loggedInUser.getType());
                 stage.setFullScreen(false);
-
                 stage.setResizable(false);
                 stage.setTitle("Event Ticket Manager Beta");
                 stage.show();
+
 
                 ((Node)((Button)actionEvent.getSource())).getScene().getWindow().hide();
 
@@ -59,5 +71,7 @@ public class LoginPageController implements Initializable {
             alert.showAndWait();
         }
         }
+
+
 
 }

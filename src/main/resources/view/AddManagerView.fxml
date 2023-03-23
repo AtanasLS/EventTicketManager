@@ -56,23 +56,24 @@
                 </HBox>
                 <HBox prefHeight="62.0" prefWidth="286.0">
                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
-                            <children>
+                     <children>
                                 <MFXButton fx:id="addBtn" onAction="#addManager" prefHeight="38.0" prefWidth="106.0" text="Add">
                                     <HBox.margin>
                                         <Insets top="10.0" />
                                     </HBox.margin>
                                 </MFXButton>
+                     </children></HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
 
-                                <MFXButton fx:id="closeB" onAction="#close" prefHeight="38.0" prefWidth="106.0" text="Add">
+                                <MFXButton fx:id="closeB" onAction="#close" prefHeight="38.0" prefWidth="106.0" text="Cancel">
                                     <HBox.margin>
                                         <Insets top="10.0" />
                                     </HBox.margin>
                                 </MFXButton>
-                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children></HBox>
                     </children>
                 </HBox>
             </children>

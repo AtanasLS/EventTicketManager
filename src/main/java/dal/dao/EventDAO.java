@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 
 public class EventDAO {
-    public static ObservableList<Event> getAllCustomers() {
+    public static ObservableList<Event> getAllEvents() {
         //creating the connector
         DataAccessManager dataAccessManager = new DataAccessManager();
         //opening connection

@@ -87,7 +87,13 @@
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <MFXButton fx:id="createBtn" prefHeight="38.0" prefWidth="106.0" text="Create">
+                                <MFXButton fx:id="createBtn"      onAction="#createEvent"  prefHeight="38.0" prefWidth="106.0" text="Create">
+                                    <HBox.margin>
+                                        <Insets top="25.0" />
+                                    </HBox.margin>
+                                </MFXButton>
+
+                                <MFXButton fx:id="closeB"  onAction="#close" prefHeight="38.0" prefWidth="106.0" text="Close">
                                     <HBox.margin>
                                         <Insets top="25.0" />
                                     </HBox.margin>

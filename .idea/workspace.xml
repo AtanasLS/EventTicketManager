@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dal/dao/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/dao/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dal/dao/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/dao/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dal/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/LoginPageModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/LoginPageModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +101,7 @@
       <workItem from="1679507215552" duration="9686000" />
       <workItem from="1679579261119" duration="705000" />
       <workItem from="1679579986684" duration="642000" />
-      <workItem from="1679580673990" duration="8971000" />
+      <workItem from="1679580673990" duration="13195000" />
     </task>
     <servers />
   </component>

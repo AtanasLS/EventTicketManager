@@ -120,7 +120,7 @@ public class MainViewController implements Initializable {
     public void delManagerHandle(ActionEvent actionEvent) throws SQLException {
 
 
-        if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() == null) {
+        if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() != null) {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
             model.deleteUser(index);
             setManagerTable(model.getAllManagers());
@@ -129,7 +129,7 @@ public class MainViewController implements Initializable {
     }
 
     public void delEventHandle(ActionEvent actionEvent) throws SQLException {
-        if (eventTable != null && eventTable.getSelectionModel().getSelectedItem() == null) {
+        if (eventTable != null && eventTable.getSelectionModel().getSelectedItem() != null) {
             String index = eventTable.getSelectionModel().getSelectedItem().getName();
             model.deleteEvent(index);
             setEventTable();

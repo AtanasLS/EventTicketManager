@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 
 public class EventDAO {
-    public static ObservableList<Event> getAllCustomers() {
+    public static ObservableList<Event> getAllEvents() {
         //creating the connector
         DataAccessManager dataAccessManager = new DataAccessManager();
         //opening connection
@@ -69,7 +69,7 @@ public class EventDAO {
         //Creating dbConnector instance
         DataAccessManager dataAccessManager = new DataAccessManager();
         try (Connection connection = dataAccessManager.getConnection()) {
-            String sql = "Delete FROM event where event_name='" + index + "';";
+            String sql = "Delete FROM CSe2022B_Event_Ticket_Manager].[dbo].[event] where event_name='" + index + "';";
             System.out.println(sql);
             Statement statement = connection.createStatement();
             if (statement.execute(sql)) {

@@ -14,23 +14,26 @@
                 <Font name="System Bold" size="22.0" />
             </font>
         </Label>
-        <TableView fx:id="EventLabels" layoutX="23.0" layoutY="108.0" prefHeight="342.0" prefWidth="360.0">
+        <TableView fx:id="eventTable" layoutX="23.0" layoutY="108.0" prefHeight="342.0" prefWidth="435.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="eventNameColumn" prefWidth="97.59997177124023" text="Name" />
+                <TableColumn fx:id="typeColumn" prefWidth="75.199951171875" text="Type" />
+            <TableColumn fx:id="startDateColumn" prefWidth="80.80006408691406" text="Start Date" />
+            <TableColumn fx:id="endDateColumn" prefWidth="83.99993896484375" text="End Date" />
+            <TableColumn fx:id="locationColumns" prefWidth="97.59997177124023" text="Location" />
             </columns>
         </TableView>
-        <TableView fx:id="ManagerLabels" layoutX="514.0" layoutY="108.0" prefHeight="342.0" prefWidth="360.0">
+        <TableView fx:id="managerTable" layoutX="588.0" layoutY="108.0" prefHeight="342.0" prefWidth="286.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="managerNameColumn" prefWidth="137.60009765625" text="Manager's Names" />
+                <TableColumn prefWidth="146.39990234375" text="Events" />
             </columns>
         </TableView>
-        <MFXButton fx:id="addManBtn" layoutX="514.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Add Manager" />
-        <MFXButton fx:id="setManBtn" layoutX="394.0" layoutY="259.0" prefHeight="40.0" prefWidth="108.0" text="Set Manager" />
-        <MFXButton fx:id="delManBtn" layoutX="640.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Delete Maneger" />
-        <MFXButton fx:id="addEventBtn" layoutX="23.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Add Event" />
-        <MFXButton fx:id="delEventBtn" layoutX="154.0" layoutY="456.0" prefHeight="40.0" prefWidth="108.0" text="Delete Event" />
-        <MFXButton fx:id="genTicketBtn" layoutX="739.0" layoutY="22.0" prefHeight="40.0" prefWidth="108.0" text="Generate Ticket" />
+        <MFXButton fx:id="addManBtn" layoutX="588.0" layoutY="456.0" onAction="#addManagerHandle" prefHeight="40.0" prefWidth="108.0" text="Add Manager" />
+        <MFXButton fx:id="setManBtn" layoutX="467.0" layoutY="259.0" onAction="#setManagerHandle" prefHeight="40.0" prefWidth="108.0" text="Set Manager" />
+        <MFXButton fx:id="delManBtn" layoutX="766.0" layoutY="456.0" onAction="#delManagerHandle" prefHeight="40.0" prefWidth="108.0" text="Delete Maneger" />
+        <MFXButton fx:id="addEventBtn" layoutX="23.0" layoutY="456.0" onAction="#addEventHandle" prefHeight="40.0" prefWidth="108.0" text="Add Event" />
+        <MFXButton fx:id="delEventBtn" layoutX="187.0" layoutY="456.0" onAction="#delEventHandle" prefHeight="40.0" prefWidth="108.0" text="Delete Event" />
+        <MFXButton fx:id="genTicketBtn" layoutX="739.0" layoutY="22.0" onAction="#generateTIcketHandle" prefHeight="40.0" prefWidth="108.0" text="Generate Ticket" />
     </children>
 </AnchorPane>

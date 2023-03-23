@@ -66,7 +66,7 @@ public class UserDAO {
         //Creating dbConnector instance
         DataAccessManager dataAccessManager = new DataAccessManager();
         try (Connection connection = dataAccessManager.getConnection()) {
-            String sql = "Delete FROM event_user where userName='" + index + "';";
+            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[event_users] where userName ='" + index + "';";
             System.out.println(sql);
             Statement statement = connection.createStatement();
             if (statement.execute(sql)) {

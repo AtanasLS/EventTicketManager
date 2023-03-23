@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/io_github_palexdev_materialfx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dal/dao/EventDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/dao/EventDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AddManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/AddManagerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +93,7 @@
       <updated>1678979229703</updated>
       <workItem from="1678979231413" duration="8189000" />
       <workItem from="1679350086330" duration="5178000" />
-      <workItem from="1679507215552" duration="3193000" />
+      <workItem from="1679507215552" duration="9686000" />
     </task>
     <servers />
   </component>

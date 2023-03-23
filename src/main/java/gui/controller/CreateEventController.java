@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class CreateEventController implements Initializable {
@@ -32,9 +33,8 @@ public class CreateEventController implements Initializable {
         model=new CreateEventModel();
     }
 
-    public void createEvent(ActionEvent actionEvent){
-        model.createEvent(nameField.getText(),typeField.getText(),new Date(),new Date(),locationField.getText());
-
+    public void createEvent(ActionEvent actionEvent) throws SQLException {
+        model.createEvent(nameField.getText(),typeField.getText(),startDatePicker.getValue(),endDatePicker.getValue(),locationField.getText());
         Stage stage = (Stage) createBtn.getScene().getWindow();
         stage.close();
     }

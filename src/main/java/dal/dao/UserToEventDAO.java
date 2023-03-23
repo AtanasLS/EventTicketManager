@@ -1,56 +1,53 @@
 package dal.dao;
 
-import be.Customer;
-import be.Ticket;
+import be.UserEvent;
 import dal.DataAccessManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TicketDAO {
-    public static ObservableList<Ticket> getAllTickets() {
-        //creating the connector
+public class UserToEventDAO {
+    public static ObservableList<UserEvent> getUserToEvent() {
         DataAccessManager dataAccessManager = new DataAccessManager();
-        //opening connection
+        //Opening connection
         try (Connection connection = dataAccessManager.getConnection()) {
-            ObservableList<Ticket> allTickets = FXCollections.observableArrayList();
+            ObservableList<UserEvent> userEvents = FXCollections.observableArrayList();
 
-            String sqlGetUsers = "SELECT * FROM ticket;";
-
+            String sqlGetCategories = "SELECT * FROM user_to_event;";
             Statement statement = connection.createStatement();
-
             //Executing sql statement to get all movies
-            if (statement.execute(sqlGetUsers)) {
+            if (statement.execute(sqlGetCategories)) {
                 //Saving result set
                 ResultSet resultSet = statement.getResultSet();
-
                 //Saving result data as variables
                 while (resultSet.next()) {
-                    int ticketId = resultSet.getInt("ticketId");
-                    int customerId = resultSet.getInt("customerId");
-                    int eventId = resultSet.getInt("eventId");
+                    int eventId=resultSet.getInt("eventId");
+                    int userId = resultSet.getInt("userId");
 
-                    //Creating movie object
-                    Ticket ticket = new Ticket(ticketId,customerId,eventId);
+                    //Creating category object
+                    UserEvent userEvent=new UserEvent(eventId,userId);
+
 
                     //Adding movie object to list of all movies
-                    allTickets.add(ticket);
+                    userEvents.add(userEvent);
                 }
             }
-            return allTickets;
+            return userEvents;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public static void addNewTicket(Ticket ticket) throws SQLException{
+    public static void addNewUserEvent(UserEvent userEvent) throws SQLException{
         //Creating dbConnector instance
         DataAccessManager dataAccessManager = new DataAccessManager();
         try(Connection connection = dataAccessManager.getConnection()) {
-            String sql = "INSERT INTO ticket VALUES ("+ticket.getTicketId()+ " ,"+ ticket.getCustomerId()+",'"+ticket.getEventId()+"')";
+            String sql = "INSERT INTO [CSe2022B_Event_Ticket_Manager].[dbo].[user_to_event] VALUES ( '"+ userEvent.getEventId()+"','"+userEvent.getUserId()+ "')";
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){
                 ResultSet resultSet = statement.getResultSet();
@@ -58,17 +55,17 @@ public class TicketDAO {
             }
         }
     }
-    public static void removeTicket(int customerId,int eventID) throws SQLException{
+    public static void removeEvent(int eventId, int userId) throws SQLException{
         //Creating dbConnector instance
         DataAccessManager dataAccessManager = new DataAccessManager();
         try(Connection connection = dataAccessManager.getConnection()) {
-            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[ticket] where customerId=" + customerId + "and eventId="+eventID+';';
-            System.out.println(sql);
-            Statement statement = connection.createStatement();
+            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[user_to_event]  where eventId=" + eventId + "and userId="+userId+';';            Statement statement = connection.createStatement();
             if(statement.execute(sql)){
                 ResultSet resultSet = statement.getResultSet();
-                System.out.println("Removed correctly");
             }
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

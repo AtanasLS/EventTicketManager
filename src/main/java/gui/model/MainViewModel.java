@@ -8,11 +8,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
+import java.util.NoSuchElementException;
 
 public class MainViewModel {
          UserDAO userDAO = new UserDAO();
          EventDAO eventDAO = new EventDAO();
+         LoginPageModel model = new LoginPageModel();
 
+
+
+    public ObservableList<User> getAllUsers(){
+       return UserDAO.getAllUsers();
+    }
 
         public ObservableList<User> getAllManagers(){
             ObservableList<User>  managers = FXCollections.observableArrayList();;

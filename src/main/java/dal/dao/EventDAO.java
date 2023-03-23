@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class EventDAO {
     public static ObservableList<Event> getAllEvents() {
@@ -30,8 +31,8 @@ public class EventDAO {
                     int id = resultSet.getInt("eventId");
                     String name = resultSet.getString("event_name");
                     String type = resultSet.getString("event_type");
-                    Date startDate = resultSet.getDate("event_date");
-                    Date endDate = resultSet.getDate("event_end_date");
+                    LocalDate startDate = resultSet.getDate("event_date").toLocalDate();
+                    LocalDate endDate = resultSet.getDate("event_end_date").toLocalDate();
                     String location = resultSet.getString("location");
 
                     //Creating movie object
@@ -53,11 +54,12 @@ public class EventDAO {
             int eventId = newEvent.getId();
             String name = newEvent.getName();
             String type = newEvent.getType();
-            Date startDate = (Date) newEvent.getStartDate();
-            Date endDate = (Date) newEvent.getEndDate();
+            LocalDate startDate = newEvent.getStartDate();
+            LocalDate endDate =  newEvent.getEndDate();
             String location = newEvent.getLocation();
 
-            String sql = "INSERT INTO event VALUES" + "("+eventId+",'"+name+"', "+type+", '"+startDate+"', '"+endDate+"', '"+location+"')";
+
+            String sql = "INSERT INTO [CSe2022B_Event_Ticket_Manager].[dbo].[event] VALUES" + "("+eventId+",'"+name+"','"+type+"', '"+startDate+"', '"+endDate+"', '"+location+"')";
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){
                 ResultSet resultSet = statement.getResultSet();
@@ -69,7 +71,7 @@ public class EventDAO {
         //Creating dbConnector instance
         DataAccessManager dataAccessManager = new DataAccessManager();
         try (Connection connection = dataAccessManager.getConnection()) {
-            String sql = "Delete FROM CSe2022B_Event_Ticket_Manager].[dbo].[event] where event_name='" + index + "';";
+            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[event] where event_name='" + index + "';";
             System.out.println(sql);
             Statement statement = connection.createStatement();
             if (statement.execute(sql)) {

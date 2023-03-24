@@ -13,7 +13,8 @@ public class CreateEventModel {
 
     public void createEvent(String eventName, String eventType, LocalDate startDate, LocalDate endDate, String location) throws SQLException {
          List<Event> events= this.eventDAO.getAllEvents();
-        Event event =new Event(events.size()+1,eventName,eventType,startDate,endDate,location);
+        Event event =new Event(eventDAO.getAllEvents()
+                .get(eventDAO.getAllEvents().size() - 1).getId() + 1,eventName,eventType,startDate,endDate,location);
 
         this.eventDAO.addNewEvent(event);
     }

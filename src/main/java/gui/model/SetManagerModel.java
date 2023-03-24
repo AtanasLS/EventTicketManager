@@ -9,12 +9,16 @@ import dal.dao.UserToEventDAO;
 import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class SetManagerModel {
 
     private UserDAO userDAO =new UserDAO();
     private EventDAO eventDAO =new EventDAO();
     private UserToEventDAO userToEventDAO = new UserToEventDAO();
+
+
+
 
     public ObservableList<User>getAllUsers(){
         return this.userDAO.getAllUsers();

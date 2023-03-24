@@ -6,6 +6,7 @@ import gui.model.SetManagerModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class SetManagerController implements Initializable {
@@ -25,17 +28,49 @@ public class SetManagerController implements Initializable {
     public MFXButton cancelBtn,addBtn;
 
     private SetManagerModel model;
+
+    private List<User> managers;
+    private List<Event> events;
+
+    private List<String> managersList=new ArrayList<>();
+    private List<String> eventsList=new ArrayList<>();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model=new SetManagerModel();
-        managerBox.setItems(FXCollections.observableArrayList(model.getAllUsers()));
-        eventBox.setItems(FXCollections.observableArrayList(model.getAllEvents()));
+        this.managers=model.getAllUsers();
+        this.events=model.getAllEvents();
+
+        for (User u:managers) {
+            this.managersList.add(u.getUsername());
+        }
+
+        for (Event e:events) {
+            this.eventsList.add(e.getName());
+        }
+        managerBox.setItems((ObservableList) managersList);
+        eventBox.setItems((ObservableList) events);
         
 
     }
 
     public void setBtn(ActionEvent actionEvent) throws SQLException {
-        if (model.setManagerToEvent((User) managerBox.getSelectionModel().getSelectedItem(),(Event) eventBox.getSelectionModel().getSelectedItem())){
+        User user=this.managers.get(0);
+        Event event=this.events.get(0);
+
+        for (User u:this.managers) {
+            if (u.getUsername().equals(managerBox.getSelectionModel().getSelectedItem())){
+                user=u;
+            }
+
+        }
+
+        for (Event e:events) {
+            if (e.getName().equals(eventBox.getSelectionModel().getSelectedItem())){
+                event=e;
+            }
+        }
+
+        if (model.setManagerToEvent(user,event)){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password");
             alert.showAndWait();
         }else {

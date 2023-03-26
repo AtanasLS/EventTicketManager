@@ -24,7 +24,8 @@ public class AddManagerModel {
         }
 
         if (!token) {
-            User user = new User(users.size() + 1, username, password, type);
+            User user = new User(userDAO.getAllUsers()
+                    .get(userDAO.getAllUsers().size() - 1).getId() + 1, username, password, type);
 
             this.userDAO.addNewUser(user);
             return token;

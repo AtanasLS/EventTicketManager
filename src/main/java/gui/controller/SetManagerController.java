@@ -29,11 +29,11 @@ public class SetManagerController implements Initializable {
 
     private SetManagerModel model;
 
-    private List<User> managers;
-    private List<Event> events;
+    private ObservableList<User> managers;
+    private ObservableList<Event> events;
 
-    private List<String> managersList=new ArrayList<>();
-    private List<String> eventsList=new ArrayList<>();
+    private ObservableList<String> managersList= FXCollections.observableArrayList();
+    private ObservableList<String> eventsList=FXCollections.observableArrayList();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model=new SetManagerModel();
@@ -46,9 +46,10 @@ public class SetManagerController implements Initializable {
 
         for (Event e:events) {
             this.eventsList.add(e.getName());
+            System.out.println(e.getName());
         }
-        managerBox.setItems((ObservableList) managersList);
-        eventBox.setItems((ObservableList) events);
+        managerBox.setItems( managersList);
+        eventBox.setItems( eventsList);
         
 
     }

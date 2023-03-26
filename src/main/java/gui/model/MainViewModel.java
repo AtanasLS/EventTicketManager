@@ -22,7 +22,7 @@ public class MainViewModel {
     }
 
         public ObservableList<User> getAllManagers(){
-            ObservableList<User>  managers = FXCollections.observableArrayList();;
+            ObservableList<User>  managers = FXCollections.observableArrayList();
             ObservableList<User> allUsers = UserDAO.getAllUsers();
             for (User u:
                  allUsers) {

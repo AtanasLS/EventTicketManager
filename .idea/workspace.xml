@@ -7,9 +7,11 @@
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +108,9 @@
       <workItem from="1679507215552" duration="9686000" />
       <workItem from="1679579261119" duration="705000" />
       <workItem from="1679579986684" duration="642000" />
-      <workItem from="1679580673990" duration="13195000" />
+      <workItem from="1679580673990" duration="13537000" />
+      <workItem from="1679663917486" duration="413000" />
+      <workItem from="1679857622817" duration="426000" />
     </task>
     <servers />
   </component>

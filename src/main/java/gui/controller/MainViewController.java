@@ -129,7 +129,7 @@ public class MainViewController implements Initializable {
     }
 
     public void delEventHandle(ActionEvent actionEvent) throws SQLException {
-        if (eventTable != null && eventTable.getSelectionModel().getSelectedItem() != null) {
+        if (eventTable != null && eventTable.getSelectionModel().getSelectedItem().getName() != null) {
             String index = eventTable.getSelectionModel().getSelectedItem().getName();
             model.deleteEvent(index);
             setEventTable();

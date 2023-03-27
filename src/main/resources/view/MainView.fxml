@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXDialog?>
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -37,5 +38,6 @@
         <MFXButton fx:id="genTicketBtn" layoutX="739.0" layoutY="22.0" onAction="#generateTIcketHandle" prefHeight="40.0" prefWidth="108.0" text="Generate Ticket" visible="false" />
       <MFXButton fx:id="refreshTablesBtn" layoutX="466.0" layoutY="328.0" onAction="#handleRefreshTables" prefHeight="40.0" prefWidth="108.0" text="Refresh Tables" />
       <MFXButton fx:id="logOutBtn" layoutX="766.0" layoutY="42.0" onAction="#handleLogOut" prefHeight="40.0" prefWidth="108.0" text="Log Out" />
+      <JFXDialog layoutX="202.0" layoutY="61.0" prefHeight="40.0" prefWidth="176.0" />
     </children>
 </AnchorPane>

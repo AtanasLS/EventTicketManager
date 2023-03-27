@@ -83,8 +83,14 @@ public class MainViewEventCoordinatorController implements Initializable {
         }
     }
 
-    public void handleCreateTicket(ActionEvent actionEvent) {
-
+    public void handleCreateTicket(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/GenerateTicketView.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("Create Ticket");
+        stage.show();
     }
 
     public void handleCreateCustomer(ActionEvent actionEvent) throws IOException {

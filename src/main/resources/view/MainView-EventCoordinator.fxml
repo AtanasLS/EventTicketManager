@@ -29,8 +29,8 @@
       <MFXButton fx:id="createTicket" layoutX="532.0" layoutY="456.0" onAction="#handleCreateTicket" prefHeight="40.0" prefWidth="108.0" text="Create Ticket" />
       <TableView fx:id="customersView" layoutX="522.0" layoutY="108.0" prefHeight="342.0" prefWidth="350.0">
         <columns>
-          <TableColumn prefWidth="188.00006103515625" text="Customer's Name" />
-          <TableColumn prefWidth="162.39996337890625" text="Customer's E-Mail" />
+          <TableColumn fx:id="customersName" prefWidth="188.00006103515625" text="Customer's Name" />
+          <TableColumn fx:id="customersEmail" prefWidth="162.39996337890625" text="Customer's E-Mail" />
         </columns>
       </TableView>
       <MFXButton fx:id="createCustomer" layoutX="685.0" layoutY="456.0" onAction="#handleCreateCustomer" prefHeight="40.0" prefWidth="129.0" text="Create Customer" />

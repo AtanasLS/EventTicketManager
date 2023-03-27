@@ -2,6 +2,7 @@ package gui.controller;
 
 import gui.model.AddManagerModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,38 +18,49 @@ public class AddManagerController implements Initializable {
 
 
     @FXML
-    public MFXTextField usernameField,passwordField;
+    public MFXTextField usernameField,passwordField, cutomersNameField, customersEmailField;
 
     @FXML
     public MFXButton addBtn,closeB;
+    @FXML
+    public MFXComboBox eventsBox;
 
     private AddManagerModel model;
-    private MainViewController mainViewController;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         model=new AddManagerModel();
-        mainViewController = new MainViewController();
+
     }
 
 
     public void addManager(ActionEvent actionEvent) throws SQLException {
 
         if (model.addManager(usernameField.getText(),passwordField.getText(),"Event Coordinator")){
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "This name or password already exists!");
             alert.showAndWait();
         }else {
             Stage stage = (Stage) addBtn.getScene().getWindow();
             stage.close();
         }
 
-
-
-}
+    }
 
     public void close(){
         Stage stage = (Stage) closeB.getScene().getWindow();
         stage.close();
     }
+
+    public void handleAddCustomer(ActionEvent actionEvent) throws SQLException {
+        if (model.addCustomer(cutomersNameField.getText(),customersEmailField.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "This name or email already exist");
+            alert.showAndWait();
+        }else {
+            Stage stage = (Stage) addBtn.getScene().getWindow();
+            stage.close();
+        }
+
+    }
+
 
 }

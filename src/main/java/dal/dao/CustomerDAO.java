@@ -16,7 +16,7 @@ public class CustomerDAO {
         try (Connection connection = dataAccessManager.getConnection()) {
             ObservableList<Customer> allCustomers = FXCollections.observableArrayList();
 
-            String sqlGetUsers = "SELECT * FROM dbo.event;";
+            String sqlGetUsers = "SELECT * FROM customers;";
 
             Statement statement = connection.createStatement();
 
@@ -28,12 +28,13 @@ public class CustomerDAO {
                 //Saving result data as variables
                 while (resultSet.next()) {
                     int id = resultSet.getInt("customerId");
-                    String email = resultSet.getString("email");
                     String name = resultSet.getString("customer_name");
+                    String email = resultSet.getString("email");
+
 
 
                     //Creating movie object
-                    Customer customer = new Customer(id,email,name);
+                    Customer customer = new Customer(id, name, email);
 
                     //Adding movie object to list of all movies
                     allCustomers.add(customer);
@@ -52,7 +53,7 @@ public class CustomerDAO {
             String email = newCustomer.getEmail();
             String name = newCustomer.getName();
 
-            String sql = "INSERT INTO customers VALUES" + "("+eventId+",'"+email+"', '"+ name+ "')";
+            String sql = "INSERT INTO [CSe2022B_Event_Ticket_Manager].[dbo].[customers] VALUES" + "("+eventId+",'"+name+"', '"+ email+ "')";
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){
                 ResultSet resultSet = statement.getResultSet();
@@ -64,7 +65,7 @@ public class CustomerDAO {
         //Creating dbConnector instance
         DataAccessManager dataAccessManager = new DataAccessManager();
         try (Connection connection = dataAccessManager.getConnection()) {
-            String sql = "Delete FROM CSe2022B_Event_Ticket_Manager].[dbo].[customers] where customer_name='" + index + "';";
+            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[customers] where customer_name='" + index + "';";
             System.out.println(sql);
             Statement statement = connection.createStatement();
             if (statement.execute(sql)) {

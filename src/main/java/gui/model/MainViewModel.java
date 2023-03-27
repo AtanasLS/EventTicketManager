@@ -1,7 +1,9 @@
 package gui.model;
 
+import be.Customer;
 import be.Event;
 import be.User;
+import dal.dao.CustomerDAO;
 import dal.dao.EventDAO;
 import dal.dao.UserDAO;
 import dal.dao.UserToEventDAO;
@@ -16,6 +18,7 @@ public class MainViewModel {
          EventDAO eventDAO = new EventDAO();
          UserToEventDAO userToEventDAO = new UserToEventDAO();
          LoginPageModel model = new LoginPageModel();
+         CustomerDAO customerDAO = new CustomerDAO();
 
 
 
@@ -44,5 +47,8 @@ public class MainViewModel {
                 UserToEventDAO.deleteEventForAllUsers(eventId);
                 EventDAO.removeEvent(index);
         }
+        public ObservableList<Customer> getAllCustomers(){
+        return CustomerDAO.getAllCustomers();
+    }
 
 }

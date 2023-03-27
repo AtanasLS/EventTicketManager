@@ -53,7 +53,7 @@ public class UserDAO {
             String userName = newUser.getUsername();
             String password = newUser.getPassword();
             String type = newUser.getType();
-            String sql = "INSERT INTO [CSe2022B_Event_Ticket_Manager].[dbo].[event_users] VALUES" + "("+userId+",'"+userName+"',' "+password+"', '"+type+"')";
+                String sql = "INSERT INTO [CSe2022B_Event_Ticket_Manager].[dbo].[event_users] VALUES" + "("+userId+",'"+userName+"',' "+password+"', '"+type+"')";
             System.out.println(sql);
             Statement statement = connection.createStatement();
             if(statement.execute(sql)){

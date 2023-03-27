@@ -4,6 +4,7 @@ import be.Event;
 import be.User;
 import dal.dao.EventDAO;
 import dal.dao.UserDAO;
+import dal.dao.UserToEventDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -13,6 +14,7 @@ import java.util.NoSuchElementException;
 public class MainViewModel {
          UserDAO userDAO = new UserDAO();
          EventDAO eventDAO = new EventDAO();
+         UserToEventDAO userToEventDAO = new UserToEventDAO();
          LoginPageModel model = new LoginPageModel();
 
 
@@ -38,7 +40,8 @@ public class MainViewModel {
         public void deleteUser(String index) throws SQLException {
                 UserDAO.removeUser(index);
         }
-        public void deleteEvent(String index) throws SQLException {
+        public void deleteEvent(int eventId,String index) throws SQLException {
+                UserToEventDAO.deleteEventForAllUsers(eventId);
                 EventDAO.removeEvent(index);
         }
 

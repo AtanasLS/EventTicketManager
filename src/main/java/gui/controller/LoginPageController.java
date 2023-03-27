@@ -41,30 +41,54 @@ public class LoginPageController implements Initializable {
 
 
     public void logIn(ActionEvent actionEvent) {
-        if (model.checkIfUserExist(usernameField.getText(), passwordField.getText())){
-            try {
+        if (model.checkIfUserExist(usernameField.getText(), passwordField.getText())) {
+            User loggedInUser = model.getUser(usernameField.getText());
+            if (loggedInUser.getType().equals("Event Coordinator")) {
+                try {
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
-                Parent root = loader.load();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                User loggedInUser = model.getUser(usernameField.getText());
-                MainViewController controller = loader.getController();
-                controller.setLoggedInUser(loggedInUser.getUsername(), loggedInUser.getType());
-                stage.setFullScreen(false);
-                stage.setResizable(false);
-                stage.setTitle("Event Ticket Manager Beta");
-                stage.show();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView-EventCoordinator.fxml"));
+                    Parent root = loader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    MainViewEventCoordinatorController controller = loader.getController();
+                    controller.setLoggedInUser(loggedInUser.getUsername(), loggedInUser.getType());
+                    stage.setFullScreen(false);
+                    stage.setResizable(false);
+                    stage.setTitle("Event Ticket Manager Beta");
+                    stage.show();
 
 
-                ((Node)((Button)actionEvent.getSource())).getScene().getWindow().hide();
+                    ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
 
-            } catch (IOException e) {
-                e.printStackTrace();
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Could not load App.fxml");
-                alert.showAndWait();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Could not load App.fxml");
+                    alert.showAndWait();
+                }
+
+            }else if (loggedInUser.getType().equals("Admin")){
+                try {
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
+                    Parent root = loader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    MainViewController controller = loader.getController();
+                    controller.setLoggedInUser(loggedInUser.getUsername(), loggedInUser.getType());
+                    stage.setFullScreen(false);
+                    stage.setResizable(false);
+                    stage.setTitle("Event Ticket Manager Beta");
+                    stage.show();
+
+
+                    ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Could not load App.fxml");
+                    alert.showAndWait();
+                }
             }
-
         }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password");

@@ -36,5 +36,6 @@
         <MFXButton fx:id="delEventBtn" layoutX="187.0" layoutY="456.0" onAction="#delEventHandle" prefHeight="40.0" prefWidth="108.0" text="Delete Event" />
         <MFXButton fx:id="genTicketBtn" layoutX="739.0" layoutY="22.0" onAction="#generateTIcketHandle" prefHeight="40.0" prefWidth="108.0" text="Generate Ticket" visible="false" />
       <MFXButton fx:id="refreshTablesBtn" layoutX="466.0" layoutY="328.0" onAction="#handleRefreshTables" prefHeight="40.0" prefWidth="108.0" text="Refresh Tables" />
+      <MFXButton fx:id="logOutBtn" layoutX="766.0" layoutY="42.0" onAction="#handleLogOut" prefHeight="40.0" prefWidth="108.0" text="Log Out" />
     </children>
 </AnchorPane>

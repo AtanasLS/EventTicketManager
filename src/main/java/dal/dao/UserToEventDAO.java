@@ -55,11 +55,27 @@ public class UserToEventDAO {
             }
         }
     }
+
     public static void removeEvent(int eventId, int userId) throws SQLException{
         //Creating dbConnector instance
         DataAccessManager dataAccessManager = new DataAccessManager();
         try(Connection connection = dataAccessManager.getConnection()) {
-            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[user_to_event]  where eventId=" + eventId + "and userId="+userId+';';            Statement statement = connection.createStatement();
+            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[user_to_event]  where eventId=" + eventId + "and userId="+userId+';';
+            Statement statement = connection.createStatement();
+            if(statement.execute(sql)){
+                ResultSet resultSet = statement.getResultSet();
+            }
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void deleteEventForAllUsers(int eventId) throws SQLException{
+        //Creating dbConnector instance
+        DataAccessManager dataAccessManager = new DataAccessManager();
+        try(Connection connection = dataAccessManager.getConnection()) {
+            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[user_to_event]  where eventId=" + eventId +';';
+            Statement statement = connection.createStatement();
             if(statement.execute(sql)){
                 ResultSet resultSet = statement.getResultSet();
             }

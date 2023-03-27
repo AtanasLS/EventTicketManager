@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
@@ -9,12 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.GenerateTicketController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.GenerateTicketController">
     <top>
         <VBox prefHeight="69.0" prefWidth="486.0" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="402.0" text="Ticket Number" textAlignment="CENTER">
+                <Label alignment="CENTER" prefHeight="50.0" prefWidth="402.0" text="Create Ticket" textAlignment="CENTER">
                     <font>
                         <Font name="Gill Sans MT" size="28.0" />
                     </font>
@@ -38,40 +37,37 @@
         <VBox prefHeight="191.0" prefWidth="286.0" BorderPane.alignment="CENTER">
             <children>
                 <HBox prefHeight="54.0" prefWidth="286.0">
-                    <children>
-                        <MFXTextField fx:id="nameField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Name">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                        </MFXTextField>
-                    </children>
+               <children>
+                  <MFXComboBox fx:id="eventsComboBox" alignment="CENTER" prefHeight="54.0" prefWidth="282.0" text="Events">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </MFXComboBox>
+               </children>
                 </HBox>
                 <HBox prefHeight="53.0" prefWidth="286.0">
-                    <children>
-                        <MFXTextField fx:id="eMailField" floatMode="ABOVE" prefHeight="49.0" prefWidth="282.0" promptText="E-Mail">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                        </MFXTextField>
-                    </children>
-                </HBox>
-                <HBox layoutX="10.0" layoutY="73.0" prefHeight="62.0" prefWidth="286.0">
-                    <children>
-                        <MFXTextField fx:id="eventField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Event">
-                            <font>
-                                <Font size="17.0" />
-                            </font>
-                        </MFXTextField>
-                    </children>
+               <children>
+                  <MFXComboBox fx:id="customerComboBox" alignment="CENTER" prefHeight="54.0" prefWidth="282.0" text="Customers">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </MFXComboBox>
+               </children>
                 </HBox>
                 <HBox prefHeight="45.0" prefWidth="286.0">
                     <children>
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <MFXButton fx:id="genBtn" prefHeight="38.0" prefWidth="106.0" text="Generate">
+                                <MFXButton fx:id="genBtn" onAction="#handleGenerateButton" prefHeight="38.0" prefWidth="106.0" text="Generate">
                                     <HBox.margin>
-                                        <Insets />
+                                        <Insets top="15.0" />
                                     </HBox.margin>
                                 </MFXButton>
                             </children>

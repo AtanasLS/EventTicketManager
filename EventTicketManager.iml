@@ -15,6 +15,7 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="javafx-swt" level="project" />
     <orderEntry type="library" name="lib2" level="project" />
-    <orderEntry type="library" name="lib3" level="project" />
+    <orderEntry type="library" name="jfoenix" level="project" />
+    <orderEntry type="library" name="no.tornado.tornadofx.controls" level="project" />
   </component>
 </module>

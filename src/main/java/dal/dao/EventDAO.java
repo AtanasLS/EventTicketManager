@@ -8,6 +8,8 @@ import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class EventDAO {
     public static ObservableList<Event> getAllEvents() {
@@ -31,12 +33,12 @@ public class EventDAO {
                     int id = resultSet.getInt("eventId");
                     String name = resultSet.getString("event_name");
                     String type = resultSet.getString("event_type");
-                    LocalDate startDate = resultSet.getDate("event_date").toLocalDate();
-                    LocalDate endDate = resultSet.getDate("event_end_date").toLocalDate();
+                    LocalDateTime startDate = resultSet.getDate("event_date").toLocalDate().atStartOfDay();
+                    LocalDateTime endDate = resultSet.getDate("event_end_date").toLocalDate().atStartOfDay();
                     String location = resultSet.getString("location");
 
                     //Creating movie object
-                    Event event= new Event(id, name,type,startDate, endDate, location );
+                    Event event= new Event(id, name,type,startDate, endDate , location);
 
                     //Adding movie object to list of all movies
                     allEvents.add(event);
@@ -54,8 +56,8 @@ public class EventDAO {
             int eventId = newEvent.getId();
             String name = newEvent.getName();
             String type = newEvent.getType();
-            LocalDate startDate = newEvent.getStartDate();
-            LocalDate endDate =  newEvent.getEndDate();
+            LocalDateTime startDate = newEvent.getStartDate();
+            LocalDateTime endDate =  newEvent.getEndDate();
             String location = newEvent.getLocation();
 
 

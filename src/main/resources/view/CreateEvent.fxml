@@ -3,14 +3,14 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import tornadofx.control.DateTimePicker?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateEventController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateEventController">
     <top>
         <VBox prefHeight="69.0" prefWidth="486.0" BorderPane.alignment="CENTER">
             <children>
@@ -59,20 +59,19 @@
                     <children>
                   <HBox prefHeight="45.0" prefWidth="286.0">
                      <children>
-                        <DatePicker fx:id="startDatePicker" prefHeight="51.0" prefWidth="122.0" promptText="Start Date">
-                           <HBox.margin>
-                              <Insets top="5.0" />
-                           </HBox.margin>
-                        </DatePicker>
-                        <DatePicker fx:id="endDatePicker" prefHeight="50.0" prefWidth="122.0" promptText="End Date">
-                           <HBox.margin>
-                              <Insets left="35.0" top="5.0" />
-                           </HBox.margin>
-                        </DatePicker>
+                        <DateTimePicker fx:id="startDateTime" format="yyyy-MM-dd HH:mm:ss" prefHeight="58.0" prefWidth="283.0" promptText="Start Date and Time..." />
                      </children>
                   </HBox>
                     </children>
                 </HBox>
+            <HBox fx:id="timePicker" cache="true" layoutX="10.0" layoutY="118.0" prefHeight="62.0" prefWidth="286.0">
+               <children>
+                  <DateTimePicker fx:id="endDateTime" format="yyyy-MM-dd HH:mm:ss" prefHeight="58.0" prefWidth="285.0" promptText="End Date and Time...">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </DateTimePicker>
+               </children></HBox>
             <HBox prefHeight="60.0" prefWidth="286.0">
                <children>
                   <MFXTextField fx:id="locationField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Location">

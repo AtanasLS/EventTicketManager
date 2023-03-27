@@ -5,15 +5,17 @@ import dal.dao.EventDAO;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 public class CreateEventModel {
 
     EventDAO eventDAO=new EventDAO();
-
-    public void createEvent(String eventName, String eventType, LocalDate startDate, LocalDate endDate, String location) throws SQLException {
+    public void createEvent(String eventName, String eventType, LocalDateTime startDate, LocalDateTime endDate, String location) throws SQLException {
          List<Event> events= this.eventDAO.getAllEvents();
          if (events.size() == 0){
+
              Event event = new Event(1,eventName, eventType, startDate, endDate, location);
              this.eventDAO.addNewEvent(event);
          }else {

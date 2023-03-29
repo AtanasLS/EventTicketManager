@@ -6,6 +6,7 @@ import be.User;
 import dal.dao.CustomerDAO;
 import dal.dao.EventDAO;
 import dal.dao.UserDAO;
+import gui.controller.MainViewController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -37,6 +38,7 @@ public class AddManagerModel {
             }else {
                 User user = new User(1, username, password, type);
                 this.userDAO.addNewUser(user);
+
             }
             return token;
         } else {
@@ -59,15 +61,22 @@ public class AddManagerModel {
                 Customer customer = new Customer(1 , name, email);
                 CustomerDAO.addNewCustomer(customer);
 
+
             }else {
                 Customer customer = new Customer(getAllCustomers()
                         .get(getAllCustomers().size() - 1).getId() + 1, name, email);
                 CustomerDAO.addNewCustomer(customer);
+
             }
+
+
             return token;
         } else {
             return token;
         }
+
+
+
     }
 
     public ObservableList<User> getAllUsers() {

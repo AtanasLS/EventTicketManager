@@ -25,17 +25,15 @@ public class AddManagerController implements Initializable {
     @FXML
     public MFXComboBox eventsBox;
 
-    private AddManagerModel model;
-
+    private AddManagerModel model = new AddManagerModel();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model=new AddManagerModel();
 
     }
 
 
     public void addManager(ActionEvent actionEvent) throws SQLException {
-
+        model.loadFromDB();
         if (model.addManager(usernameField.getText(),passwordField.getText(),"Event Coordinator")){
             Alert alert = new Alert(Alert.AlertType.ERROR, "This name or password already exists!");
             alert.showAndWait();

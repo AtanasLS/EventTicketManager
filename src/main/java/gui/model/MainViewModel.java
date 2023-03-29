@@ -14,34 +14,51 @@ import java.sql.SQLException;
 import java.util.NoSuchElementException;
 
 public class MainViewModel {
-         UserDAO userDAO = new UserDAO();
+
          EventDAO eventDAO = new EventDAO();
          UserToEventDAO userToEventDAO = new UserToEventDAO();
-         LoginPageModel model = new LoginPageModel();
+
          CustomerDAO customerDAO = new CustomerDAO();
+         private final ObservableList<User> allUsers;
+         private final ObservableList<User> allManagers;
 
+         public MainViewModel(){
+             this.allUsers = FXCollections.observableArrayList();
+             this.allManagers = FXCollections.observableArrayList();
+             for (User u:
+                     allUsers) {
+                 if (u.getType().equals("Event Coordinator")){
+                     allManagers.add(u);
+                 }
+             }
 
+         }
 
     public ObservableList<User> getAllUsers(){
-       return UserDAO.getAllUsers();
+       return allUsers;
     }
 
         public ObservableList<User> getAllManagers(){
-            ObservableList<User>  managers = FXCollections.observableArrayList();
-            ObservableList<User> allUsers = UserDAO.getAllUsers();
+            loadFromDB();
             for (User u:
-                 allUsers) {
+                    allUsers) {
                 if (u.getType().equals("Event Coordinator")){
-                    managers.add(u);
+                    allManagers.add(u);
                 }
             }
-            return managers;
+            return allManagers;
+         }
+         public void loadFromDB(){
+             UserDAO userDAO = new UserDAO();
+             this.allUsers.clear();
+             this.allUsers.addAll(UserDAO.getAllUsers());
          }
          public ObservableList<Event> getAllEvents(){
         return    EventDAO.getAllEvents();
         }
         public void deleteUser(String index) throws SQLException {
                 UserDAO.removeUser(index);
+                loadFromDB();
         }
         public void deleteEvent(int eventId,String index) throws SQLException {
                 UserToEventDAO.deleteEventForAllUsers(eventId);

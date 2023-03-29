@@ -46,11 +46,7 @@ public class CreateEventController implements Initializable {
         LocalDateTime startDatetimeValue = startDateTime.getDateTimeValue();
         LocalDateTime endDateTimeValue = endDateTime.getDateTimeValue();
 
-        
-
-
      //   System.out.println(startDateTime.getDateTimeValue());
-
         model.createEvent(nameField.getText(),typeField.getText(), startDatetimeValue,endDateTimeValue,locationField.getText());
         Stage stage = (Stage) createBtn.getScene().getWindow();
         stage.close();

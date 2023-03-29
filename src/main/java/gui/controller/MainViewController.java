@@ -51,10 +51,13 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model = new MainViewModel();
+        model.loadFromDB();
         setEventTable();
-        setManagerTable(model.getAllManagers());
+        setManagerTable();
         refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
 
+    }
+    public void loadFromDB(){
     }
     public void setLoggedInUser(String userName, String type){
         nameLabel.setText("Welcome "+userName + "! Position: " + type);
@@ -68,9 +71,10 @@ public class MainViewController implements Initializable {
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
         eventTable.setItems(model.getAllEvents());
     }
-    public void setManagerTable(ObservableList<User> allUsers){
+    public void setManagerTable(){
+        model.loadFromDB();
         managerNameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
-        managerTable.setItems(allUsers);
+        managerTable.setItems(model.getAllManagers());
     }
 
     public void addManagerHandle(ActionEvent actionEvent) throws IOException {
@@ -124,7 +128,7 @@ public class MainViewController implements Initializable {
         if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() != null) {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
             model.deleteUser(index);
-            setManagerTable(model.getAllManagers());
+            setManagerTable();
         }
 
     }
@@ -141,8 +145,8 @@ public class MainViewController implements Initializable {
     }
 
     public void handleRefreshTables(ActionEvent actionEvent) {
-        setManagerTable(model.getAllManagers());
-        setEventTable();
+        managerTable.refresh();
+        eventTable.refresh();
     }
 
     public void handleLogOut(ActionEvent actionEvent) throws IOException {
@@ -153,7 +157,6 @@ public class MainViewController implements Initializable {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("Please Log In");
-
         stage.show();
     }
 }

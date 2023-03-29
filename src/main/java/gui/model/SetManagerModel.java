@@ -38,6 +38,7 @@ public class SetManagerModel {
             if(e.getEventId()==userEvent.getEventId() && e.getUserId()==userEvent.getUserId()){
                 token[0] = false;
                 return;
+
             }
         });
 

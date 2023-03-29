@@ -23,7 +23,7 @@ public class MainViewModel {
 
 
     public ObservableList<User> getAllUsers(){
-       return UserDAO.getAllUsers();
+       return userDAO.getAllUsers();
     }
 
         public ObservableList<User> getAllManagers(){
@@ -38,17 +38,17 @@ public class MainViewModel {
             return managers;
          }
          public ObservableList<Event> getAllEvents(){
-        return    EventDAO.getAllEvents();
+        return    eventDAO.getAllEvents();
         }
         public void deleteUser(String index) throws SQLException {
-                UserDAO.removeUser(index);
+                userDAO.removeUser(index);
         }
         public void deleteEvent(int eventId,String index) throws SQLException {
-                UserToEventDAO.deleteEventForAllUsers(eventId);
-                EventDAO.removeEvent(index);
+                userToEventDAO.deleteEventForAllUsers(eventId);
+                eventDAO.removeEvent(index);
         }
         public ObservableList<Customer> getAllCustomers(){
-        return CustomerDAO.getAllCustomers();
+        return customerDAO.getAllCustomers();
     }
 
 }

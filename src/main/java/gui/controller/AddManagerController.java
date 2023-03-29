@@ -1,6 +1,7 @@
 package gui.controller;
 
 import gui.model.AddManagerModel;
+import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -56,6 +57,8 @@ public class AddManagerController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR, "This name or email already exist");
             alert.showAndWait();
         }else {
+
+
             Stage stage = (Stage) addBtn.getScene().getWindow();
             stage.close();
         }

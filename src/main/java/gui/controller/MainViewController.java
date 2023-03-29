@@ -27,6 +27,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 public class MainViewController implements Initializable {
     @FXML
@@ -52,7 +53,7 @@ public class MainViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         model = new MainViewModel();
         setEventTable();
-        setManagerTable(model.getAllManagers());
+        setManagerTable();
         refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
 
     }
@@ -68,12 +69,12 @@ public class MainViewController implements Initializable {
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
         eventTable.setItems(model.getAllEvents());
     }
-    public void setManagerTable(ObservableList<User> allUsers){
+    public void setManagerTable(){
         managerNameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
-        managerTable.setItems(allUsers);
+        managerTable.setItems(model.getAllManagers());
     }
 
-    public void addManagerHandle(ActionEvent actionEvent) throws IOException {
+    public void addManagerHandle(ActionEvent actionEvent) throws IOException, InterruptedException {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddManagerView.fxml"));
             Parent root = loader.load();
@@ -82,7 +83,6 @@ public class MainViewController implements Initializable {
             stage.setResizable(false);
             stage.setTitle("Add Manager");
             stage.show();
-
 
     }
 
@@ -124,7 +124,7 @@ public class MainViewController implements Initializable {
         if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() != null) {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
             model.deleteUser(index);
-            setManagerTable(model.getAllManagers());
+            setManagerTable();
         }
 
     }
@@ -141,7 +141,7 @@ public class MainViewController implements Initializable {
     }
 
     public void handleRefreshTables(ActionEvent actionEvent) {
-        setManagerTable(model.getAllManagers());
+        setManagerTable();
         setEventTable();
     }
 
@@ -156,5 +156,7 @@ public class MainViewController implements Initializable {
 
         stage.show();
     }
+
+
 }
 

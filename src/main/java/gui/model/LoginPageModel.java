@@ -19,8 +19,7 @@ public class LoginPageModel  {
 
     public boolean checkIfUserExist(String username, String password){
         List<User> users = this.getAllUsers();
-        for (User u:
-            users ) {
+        for (User u: users ) {
             if (u.getUsername().equals(username) && u.getPassword().equals(password)){
                 loggedInUser = u.getUsername() + " " + u.getType();
                 return true;

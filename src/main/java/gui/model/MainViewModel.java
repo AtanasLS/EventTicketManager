@@ -7,6 +7,7 @@ import dal.dao.CustomerDAO;
 import dal.dao.EventDAO;
 import dal.dao.UserDAO;
 import dal.dao.UserToEventDAO;
+import gui.controller.MainViewController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -19,6 +20,8 @@ public class MainViewModel {
          UserToEventDAO userToEventDAO = new UserToEventDAO();
          LoginPageModel model = new LoginPageModel();
          CustomerDAO customerDAO = new CustomerDAO();
+
+         MainViewController controller=new MainViewController();
 
 
 
@@ -50,5 +53,8 @@ public class MainViewModel {
         public ObservableList<Customer> getAllCustomers(){
         return customerDAO.getAllCustomers();
     }
+
+
+
 
 }

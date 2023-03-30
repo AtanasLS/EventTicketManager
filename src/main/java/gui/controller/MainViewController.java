@@ -52,13 +52,13 @@ public class MainViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         model = new MainViewModel();
         model.loadFromDB();
+        model.setAllManagers(model.getAllUsers());
         setEventTable();
         setManagerTable();
         refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
 
     }
-    public void loadFromDB(){
-    }
+
     public void setLoggedInUser(String userName, String type){
         nameLabel.setText("Welcome "+userName + "! Position: " + type);
     }
@@ -72,7 +72,7 @@ public class MainViewController implements Initializable {
         eventTable.setItems(model.getAllEvents());
     }
     public void setManagerTable(){
-        model.loadFromDB();
+      //  model.loadFromDB();
         managerNameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
         managerTable.setItems(model.getAllManagers());
     }
@@ -128,7 +128,7 @@ public class MainViewController implements Initializable {
         if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() != null) {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
             model.deleteUser(index);
-            setManagerTable();
+           // setManagerTable();
         }
 
     }

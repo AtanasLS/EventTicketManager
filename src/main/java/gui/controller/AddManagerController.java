@@ -1,6 +1,7 @@
 package gui.controller;
 
 import gui.model.AddManagerModel;
+import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.controls.MFXTextField;
@@ -26,14 +27,15 @@ public class AddManagerController implements Initializable {
     public MFXComboBox eventsBox;
 
     private AddManagerModel model = new AddManagerModel();
+    private MainViewModel mainViewModel = new MainViewModel();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        model.loadFromDB();
     }
 
 
     public void addManager(ActionEvent actionEvent) throws SQLException {
-        model.loadFromDB();
+
         if (model.addManager(usernameField.getText(),passwordField.getText(),"Event Coordinator")){
             Alert alert = new Alert(Alert.AlertType.ERROR, "This name or password already exists!");
             alert.showAndWait();

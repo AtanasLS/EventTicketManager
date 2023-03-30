@@ -19,6 +19,8 @@ public class AddManagerModel {
 
     CustomerDAO customerDAO = new CustomerDAO();
 
+    MainViewModel mainViewModel = new MainViewModel();
+
     private ObservableList<User> allUsers;
 
     public AddManagerModel(){
@@ -30,27 +32,28 @@ public class AddManagerModel {
         this.allUsers.clear();
         this.allUsers.addAll(UserDAO.getAllUsers());
     }
+
     public boolean addManager(String username, String password, String type) throws SQLException {
-        loadFromDB();
+
         List<User> users = getAllUsers();
         boolean token = false;
-
         for (User u : users) {
             if (u.getUsername().equals(username)) {
                 token = true;
             }
         }
-
         if (!token) {
             if (getAllUsers().size() != 0) {
-                User user = new User(allUsers
-                        .get(allUsers.size() - 1).getId() + 1, username, password, type);
-               //this.allUsers.add(user);
+                User user = new User(getAllUsers()
+                        .get(getAllUsers().size() - 1).getId() + 1, username, password, type);
+                //this.allUsers.add(user);
                 UserDAO.addNewUser(user);
+                mainViewModel.addUser(user);
             }else {
                 User user = new User(1, username, password, type);
                // this.allUsers.add(user);
                 UserDAO.addNewUser(user);
+                mainViewModel.addUser(user);
             }
             return token;
         } else {

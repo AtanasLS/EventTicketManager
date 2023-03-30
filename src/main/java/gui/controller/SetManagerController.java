@@ -41,7 +41,9 @@ public class SetManagerController implements Initializable {
         this.events=model.getAllEvents();
 
         for (User u:managers) {
-            this.managersList.add(u.getUsername());
+            if (u.getType().equals("Event Coordinator")){
+                this.managersList.add(u.getUsername());
+            }
         }
 
         for (Event e:events) {
@@ -55,8 +57,8 @@ public class SetManagerController implements Initializable {
     }
 
     public void setBtn(ActionEvent actionEvent) throws SQLException {
-        User user=this.managers.get(0);
-        Event event=this.events.get(0);
+        User user= null;
+        Event event= null;
 
         for (User u:this.managers) {
             if (u.getUsername().equals(managerBox.getSelectionModel().getSelectedItem())){

@@ -31,6 +31,7 @@ public class MainViewEventCoordinatorController implements Initializable {
     public Label nameLabel;
     public TableView<Event> eventTable;
     public MFXButton changeBtn;
+    public Label userNameLbl;
     @FXML
     private TableColumn<Event, String> eventNameColumn, typeColumn, locationColumns;
     @FXML TableView<Customer> customersView;
@@ -40,24 +41,32 @@ public class MainViewEventCoordinatorController implements Initializable {
 
     private MainViewModel model = new MainViewModel();
 
+    private User loggedInUser;
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setEventTable();
-        System.out.println(model.getAllCustomers().size());
-        setCustomersTableView();
+            setEventTable();
+            setCustomersTableView();
     }
 
-    public void setLoggedInUser(String userName, String type){
+    public void setLoggedInUser(User u){
+        System.out.println(u.getUsername());
+        this.loggedInUser = u;
+    }
+    public void setLoggedInUserNames(String userName, String type){
+
         if (type.equals("Event Coordinator")) {
+            userNameLbl.setText(userName);
             nameLabel.setText("Welcome " + userName + "! Position: " + type);
             changeBtn.setVisible(false);
         }else {
             nameLabel.setText("Now you are logged in as an Event Coordinator!");
             changeBtn.setVisible(true);
         }
-    }
 
+    }
 
 
     public void setEventTable() {
@@ -66,7 +75,12 @@ public class MainViewEventCoordinatorController implements Initializable {
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
-        eventTable.setItems(model.getAllEvents());
+
+        System.out.println(this.loggedInUser);
+        if (loggedInUser!= null) {
+            System.out.println();
+            eventTable.setItems(model.getAllUserToEventsName(loggedInUser));
+        }
     }
     public void setCustomersTableView(){
         customersName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -143,7 +157,7 @@ public class MainViewEventCoordinatorController implements Initializable {
                 admin = u;
             }
         }
-        assert admin != null;
+
         controller.setLoggedInUser(admin.getUsername(), admin.getType());
 
     }

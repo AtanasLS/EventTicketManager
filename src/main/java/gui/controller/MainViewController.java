@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import javax.naming.Name;
@@ -52,7 +53,7 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model = new MainViewModel();
-        setEventTable();
+        setEventTable(model.getAllEvents());
         setManagerTable();
         refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
 
@@ -61,17 +62,18 @@ public class MainViewController implements Initializable {
         nameLabel.setText("Welcome "+userName + "! Position: " + type);
     }
 
-    public void setEventTable(){
+    public void setEventTable(ObservableList<Event> events){
         eventNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
-        eventTable.setItems(model.getAllEvents());
+        eventTable.setItems(events);
     }
     public void setManagerTable(){
         managerNameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
         managerTable.setItems(model.getAllManagers());
+
     }
 
     public void addManagerHandle(ActionEvent actionEvent) throws IOException, InterruptedException {
@@ -135,14 +137,14 @@ public class MainViewController implements Initializable {
             int eventId = eventTable.getSelectionModel().getSelectedItem().getId();
 
             model.deleteEvent(eventId,index);
-            setEventTable();
+            setEventTable(model.getAllEvents());
         }
 
     }
 
     public void handleRefreshTables(ActionEvent actionEvent) {
         setManagerTable();
-        setEventTable();
+        setEventTable(model.getAllEvents());
     }
 
     public void handleLogOut(ActionEvent actionEvent) throws IOException {
@@ -168,7 +170,14 @@ public class MainViewController implements Initializable {
             stage.setTitle("Please Log In");
             stage.show();
             MainViewEventCoordinatorController controller = loader.getController();
-            controller.setLoggedInUser(" ","Admin");
+            controller.setLoggedInUserNames( " ","Admin");
         }
+
+    public void handleShowAssignedEvents(MouseEvent mouseEvent) {
+        if (managerTable.getSelectionModel().getSelectedItem() != null){
+            User selectedUser = managerTable.getSelectionModel().getSelectedItem();
+            setEventTable(model.getAllUserToEventsName(selectedUser));
+        }
+    }
 }
 

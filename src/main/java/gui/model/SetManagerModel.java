@@ -43,8 +43,6 @@ public class SetManagerModel {
         });
 
         if (!token[0]) {
-
-
             userToEventDAO.addNewUserEvent(userEvent);
             return token[0];
         }else {

@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/UserEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/UserEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView-EventCoordinator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView-EventCoordinator.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" afterDir="false" />
     </list>
@@ -116,7 +119,7 @@
       <workItem from="1679897458106" duration="10317000" />
       <workItem from="1679942067323" duration="5918000" />
       <workItem from="1680121112134" duration="4427000" />
-      <workItem from="1680210321394" duration="386000" />
+      <workItem from="1680210321394" duration="7221000" />
     </task>
     <servers />
   </component>

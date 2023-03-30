@@ -1,6 +1,6 @@
 package gui.controller;
 
-import com.jfoenix.controls.JFXTimePicker;
+
 import gui.model.CreateEventModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;

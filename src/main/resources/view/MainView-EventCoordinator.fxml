@@ -35,5 +35,6 @@
       </TableView>
       <MFXButton fx:id="createCustomer" layoutX="685.0" layoutY="456.0" onAction="#handleCreateCustomer" prefHeight="40.0" prefWidth="129.0" text="Create Customer" />
       <MFXButton fx:id="logOutBtn" layoutX="764.0" layoutY="42.0" onAction="#handleLogOut" prefHeight="40.0" prefWidth="108.0" text="Log Out" />
+      <MFXButton fx:id="changeBtn" layoutX="511.0" layoutY="42.0" onAction="#handleChangeView" prefHeight="40.0" prefWidth="108.0" text="Change View" />
     </children>
 </AnchorPane>

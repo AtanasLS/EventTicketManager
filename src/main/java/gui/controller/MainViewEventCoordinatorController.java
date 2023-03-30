@@ -2,7 +2,9 @@ package gui.controller;
 
 import be.Customer;
 import be.Event;
+import be.User;
 import gui.model.MainViewModel;
+import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,7 @@ public class MainViewEventCoordinatorController implements Initializable {
     @FXML
     public Label nameLabel;
     public TableView<Event> eventTable;
+    public MFXButton changeBtn;
     @FXML
     private TableColumn<Event, String> eventNameColumn, typeColumn, locationColumns;
     @FXML TableView<Customer> customersView;
@@ -40,13 +43,20 @@ public class MainViewEventCoordinatorController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         setEventTable();
         System.out.println(model.getAllCustomers().size());
         setCustomersTableView();
     }
 
     public void setLoggedInUser(String userName, String type){
-        nameLabel.setText("Welcome "+userName + "! Position: " + type);
+        if (type.equals("Event Coordinator")) {
+            nameLabel.setText("Welcome " + userName + "! Position: " + type);
+            changeBtn.setVisible(false);
+        }else {
+            nameLabel.setText("Now you are logged in as an Event Coordinator!");
+            changeBtn.setVisible(true);
+        }
     }
 
 
@@ -117,5 +127,18 @@ public class MainViewEventCoordinatorController implements Initializable {
     public void handleRefreshTables(ActionEvent actionEvent) {
         setCustomersTableView();
         setEventTable();
+    }
+
+    public void handleChangeBtn(ActionEvent actionEvent) throws IOException {
+        ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.show();
+        MainViewController controller = loader.getController();
+        controller.setLoggedInUser("","Admin");
+
     }
 }

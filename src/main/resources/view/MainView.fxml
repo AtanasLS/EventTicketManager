@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="510.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
+<AnchorPane prefHeight="510.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
     <children>
         <Label fx:id="nameLabel" layoutX="25.0" layoutY="42.0" prefHeight="40.0" prefWidth="435.0" text="Label">
             <font>
@@ -39,5 +39,10 @@
       <MFXButton fx:id="refreshTablesBtn" layoutX="466.0" layoutY="328.0" onAction="#handleRefreshTables" prefHeight="40.0" prefWidth="108.0" text="Refresh Tables" />
       <MFXButton fx:id="logOutBtn" layoutX="766.0" layoutY="42.0" onAction="#handleLogOut" prefHeight="40.0" prefWidth="108.0" text="Log Out" />
       <JFXDialog layoutX="202.0" layoutY="61.0" prefHeight="40.0" prefWidth="176.0" />
+      <MFXButton fx:id="changeBtn" layoutX="623.0" layoutY="42.0" onAction="#handleChangeBtn" prefHeight="40.0" prefWidth="108.0" text="Change View">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </MFXButton>
     </children>
 </AnchorPane>

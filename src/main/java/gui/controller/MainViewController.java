@@ -159,5 +159,18 @@ public class MainViewController implements Initializable {
         stage.setTitle("Please Log In");
         stage.show();
     }
+
+    public void handleChangeBtn(ActionEvent actionEvent) throws IOException {
+        ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView-EventCoordinator.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("Please Log In");
+        stage.show();
+        MainViewEventCoordinatorController controller = loader.getController();
+        controller.setLoggedInUser(" ","Admin");
+    }
 }
 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.GenerateTicketController">
+    <top>
+        <VBox prefHeight="69.0" prefWidth="486.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="50.0" prefWidth="402.0" text="Create Ticket" textAlignment="CENTER">
+                    <font>
+                        <Font name="Gill Sans MT" size="28.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+    <left>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+    </left>
+    <right>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+    </right>
+    <bottom>
+        <HBox prefHeight="20.0" prefWidth="486.0" BorderPane.alignment="CENTER" />
+    </bottom>
+    <center>
+        <VBox prefHeight="191.0" prefWidth="286.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="54.0" prefWidth="286.0">
+               <children>
+                  <MFXComboBox fx:id="eventsComboBox" alignment="CENTER" prefHeight="54.0" prefWidth="282.0" text="Events">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </MFXComboBox>
+               </children>
+                </HBox>
+                <HBox prefHeight="53.0" prefWidth="286.0">
+               <children>
+                  <MFXComboBox fx:id="customerComboBox" alignment="CENTER" prefHeight="54.0" prefWidth="282.0" text="Customers">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </MFXComboBox>
+               </children>
+                </HBox>
+                <HBox prefHeight="45.0" prefWidth="286.0">
+                    <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <MFXButton fx:id="genBtn" onAction="#handleGenerateButton" prefHeight="38.0" prefWidth="106.0" text="Generate">
+                                    <HBox.margin>
+                                        <Insets top="15.0" />
+                                    </HBox.margin>
+                                </MFXButton>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

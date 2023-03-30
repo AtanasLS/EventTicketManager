@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
+    <children>
+        <Label fx:id="nameLabel" layoutX="25.0" layoutY="42.0" prefHeight="40.0" prefWidth="435.0" text="Label">
+            <font>
+                <Font name="System Bold" size="19.0" />
+            </font>
+        </Label>
+        <TableView fx:id="eventTable" layoutX="23.0" layoutY="108.0" prefHeight="342.0" prefWidth="435.0">
+            <columns>
+                <TableColumn fx:id="eventNameColumn" prefWidth="97.59997177124023" text="Name" />
+                <TableColumn fx:id="typeColumn" prefWidth="75.199951171875" text="Type" />
+            <TableColumn fx:id="startDateColumn" prefWidth="80.80006408691406" text="Start Date" />
+            <TableColumn fx:id="endDateColumn" prefWidth="83.99993896484375" text="End Date" />
+            <TableColumn fx:id="locationColumns" prefWidth="97.59997177124023" text="Location" />
+            </columns>
+        </TableView>
+        <TableView fx:id="managerTable" layoutX="634.0" layoutY="108.0" onMouseClicked="#handleShowAssignedEvents" prefHeight="342.0" prefWidth="240.0">
+            <columns>
+                <TableColumn fx:id="managerNameColumn" prefWidth="239.20001220703125" text="Manager's Names" />
+            </columns>
+        </TableView>
+        <MFXButton fx:id="addManBtn" layoutX="623.0" layoutY="456.0" onAction="#addManagerHandle" prefHeight="40.0" prefWidth="108.0" text="Add Manager" />
+        <MFXButton fx:id="setManBtn" layoutX="500.0" layoutY="259.0" onAction="#setManagerHandle" prefHeight="40.0" prefWidth="108.0" text="Set Manager" />
+        <MFXButton fx:id="delManBtn" layoutX="766.0" layoutY="456.0" onAction="#delManagerHandle" prefHeight="40.0" prefWidth="108.0" text="Delete Maneger" />
+        <MFXButton fx:id="addEventBtn" layoutX="23.0" layoutY="456.0" onAction="#addEventHandle" prefHeight="40.0" prefWidth="108.0" text="Add Event" />
+        <MFXButton fx:id="delEventBtn" layoutX="187.0" layoutY="456.0" onAction="#delEventHandle" prefHeight="40.0" prefWidth="108.0" text="Delete Event" />
+        <MFXButton fx:id="genTicketBtn" layoutX="739.0" layoutY="22.0" onAction="#generateTIcketHandle" prefHeight="40.0" prefWidth="108.0" text="Generate Ticket" visible="false" />
+      <MFXButton fx:id="refreshTablesBtn" layoutX="500.0" layoutY="336.0" onAction="#handleRefreshTables" prefHeight="40.0" prefWidth="108.0" text="Refresh Tables" />
+      <MFXButton fx:id="logOutBtn" layoutX="766.0" layoutY="42.0" onAction="#handleLogOut" prefHeight="40.0" prefWidth="108.0" text="Log Out" />
+
+      <MFXButton fx:id="changeBtn" layoutX="623.0" layoutY="41.0" onAction="#handleChangeView" prefHeight="40.0" prefWidth="108.0" text="Change View" />
+    </children>
+</AnchorPane>

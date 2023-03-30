@@ -1,12 +1,12 @@
 package be;
 
-public class EventCoordinator {
+public class User {
     private int id;
     private String username;
     private String password;
-    private String type;
 
-    public EventCoordinator(int id, String username, String password, String type ){
+    private String type;
+     public User(int id, String username, String password, String type ){
         this.id = id;
         this.username = username;
         this.password = password;
@@ -18,6 +18,14 @@ public class EventCoordinator {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType() {
+        this.type = type;
     }
 
     public String getUsername() {
@@ -36,11 +44,4 @@ public class EventCoordinator {
         this.password = password;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType() {
-        this.type = "Event Coordinator";
-    }
 }

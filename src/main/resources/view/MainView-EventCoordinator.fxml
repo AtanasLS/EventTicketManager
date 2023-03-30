@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="510.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewEventCoordinatorController">
+    <children>
+        <Label fx:id="nameLabel" layoutX="25.0" layoutY="42.0" prefHeight="40.0" prefWidth="435.0" text="Label">
+            <font>
+                <Font name="System Bold" size="19.0" />
+            </font>
+        </Label>
+        <TableView fx:id="eventTable" layoutX="23.0" layoutY="108.0" prefHeight="342.0" prefWidth="488.0">
+            <columns>
+                <TableColumn fx:id="eventNameColumn" prefWidth="97.59997177124023" text="Name" />
+                <TableColumn fx:id="typeColumn" prefWidth="75.199951171875" text="Type" />
+                <TableColumn fx:id="startDateColumn" prefWidth="108.80000305175781" text="Start Date" />
+                <TableColumn fx:id="endDateColumn" prefWidth="123.20001220703125" text="End Date" />
+                <TableColumn fx:id="locationColumns" prefWidth="81.5999755859375" text="Location" />
+            </columns>
+        </TableView>
+        <MFXButton fx:id="addEventBtn" layoutX="23.0" layoutY="456.0" onAction="#addEventHandle" prefHeight="40.0" prefWidth="108.0" text="Add Event" />
+        <MFXButton fx:id="delEventBtn" layoutX="187.0" layoutY="456.0" onAction="#delEventHandle" prefHeight="40.0" prefWidth="108.0" text="Delete Event" />
+        <MFXButton fx:id="refreshTablesBtn" layoutX="643.0" layoutY="42.0" onAction="#handleRefreshTables" prefHeight="40.0" prefWidth="108.0" text="Refresh Tables" />
+      <MFXButton fx:id="createTicket" layoutX="532.0" layoutY="456.0" onAction="#handleCreateTicket" prefHeight="40.0" prefWidth="108.0" text="Create Ticket" />
+      <TableView fx:id="customersView" layoutX="551.0" layoutY="108.0" prefHeight="342.0" prefWidth="335.0">
+        <columns>
+          <TableColumn fx:id="customersName" prefWidth="161.60009765625" text="Customer's Name" />
+          <TableColumn fx:id="customersEmail" prefWidth="171.199951171875" text="Customer's E-Mail" />
+        </columns>
+      </TableView>
+      <MFXButton fx:id="createCustomer" layoutX="685.0" layoutY="456.0" onAction="#handleCreateCustomer" prefHeight="40.0" prefWidth="129.0" text="Create Customer" />
+      <MFXButton fx:id="logOutBtn" layoutX="764.0" layoutY="42.0" onAction="#handleLogOut" prefHeight="40.0" prefWidth="108.0" text="Log Out" />
+      <MFXButton fx:id="changeBtn" layoutX="511.0" layoutY="42.0" onAction="#handleChangeView" prefHeight="40.0" prefWidth="108.0" text="Change View" />
+      <Label fx:id="userNameLbl" layoutX="837.0" layoutY="14.0" text="Label" visible="false" />
+    </children>
+</AnchorPane>

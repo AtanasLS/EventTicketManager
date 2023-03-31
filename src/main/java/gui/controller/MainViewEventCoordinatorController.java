@@ -75,10 +75,8 @@ public class MainViewEventCoordinatorController implements Initializable {
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
-
         System.out.println(this.loggedInUser);
         if (loggedInUser!= null) {
-            System.out.println();
             eventTable.setItems(model.getAllUserToEventsName(loggedInUser));
         }
     }

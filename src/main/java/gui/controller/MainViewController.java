@@ -81,6 +81,8 @@ public class MainViewController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddManagerView.fxml"));
             Parent root = loader.load();
+            AddManagerController ctrl = loader.getController();
+            ctrl.setMainModel(model);
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setResizable(false);

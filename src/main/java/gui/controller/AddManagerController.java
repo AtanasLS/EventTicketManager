@@ -26,13 +26,14 @@ public class AddManagerController implements Initializable {
     @FXML
     public MFXComboBox eventsBox;
 
-    private AddManagerModel model = new AddManagerModel();
-    private MainViewModel mainViewModel = new MainViewModel();
+    private AddManagerModel model;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model.loadFromDB();
+        //model.loadFromDB();
     }
-
+    public void setMainModel(MainViewModel mvm){
+        model = new AddManagerModel(mvm) ;
+    }
 
     public void addManager(ActionEvent actionEvent) throws SQLException {
 

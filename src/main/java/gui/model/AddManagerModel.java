@@ -19,23 +19,20 @@ public class AddManagerModel {
 
     CustomerDAO customerDAO = new CustomerDAO();
 
-    MainViewModel mainViewModel = new MainViewModel();
+    MainViewModel mainViewModel;
 
-    private ObservableList<User> allUsers;
 
-    public AddManagerModel(){
-        this.allUsers = FXCollections.observableArrayList();
+
+    public AddManagerModel(MainViewModel mainViewModel) {
+        this.mainViewModel = mainViewModel;
     }
 
-    public void loadFromDB(){
-        UserDAO userDAO = new UserDAO();
-        this.allUsers.clear();
-        this.allUsers.addAll(UserDAO.getAllUsers());
-    }
+
+
 
     public boolean addManager(String username, String password, String type) throws SQLException {
 
-        List<User> users = getAllUsers();
+        List<User> users = mainViewModel.getAllUsers();
         boolean token = false;
         for (User u : users) {
             if (u.getUsername().equals(username)) {
@@ -43,9 +40,9 @@ public class AddManagerModel {
             }
         }
         if (!token) {
-            if (getAllUsers().size() != 0) {
-                User user = new User(getAllUsers()
-                        .get(getAllUsers().size() - 1).getId() + 1, username, password, type);
+            if (mainViewModel.getAllUsers().size() != 0) {
+                User user = new User(mainViewModel.getAllUsers()
+                        .get(mainViewModel.getAllUsers().size() - 1).getId() + 1, username, password, type);
                 //this.allUsers.add(user);
                 UserDAO.addNewUser(user);
                 mainViewModel.addUser(user);
@@ -87,10 +84,6 @@ public class AddManagerModel {
         }
     }
 
-    public ObservableList<User> getAllUsers() {
-
-        return allUsers;
-    }
 
     public ObservableList<Customer> getAllCustomers() {
         return CustomerDAO.getAllCustomers();

@@ -60,6 +60,7 @@ public class MainViewModel {
             this.getAllManagers().remove(userToRemoveFromAllUsers);
         }
         public void addUser(User userToAdd){
+             this.allUsers.add(userToAdd);
              this.allManagers.add(userToAdd);
 
         }

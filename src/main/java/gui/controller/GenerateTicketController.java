@@ -4,21 +4,40 @@ package gui.controller;
 import be.Customer;
 import be.Event;
 import be.User;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeReader;
+import com.google.zxing.qrcode.QRCodeWriter;
 import gui.model.AddNewTicketModel;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import javafx.beans.binding.ObjectExpression;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GenerateTicketController implements Initializable {
     @FXML
@@ -53,7 +72,9 @@ public class GenerateTicketController implements Initializable {
 
     }
 
-    public void handleGenerateButton(ActionEvent actionEvent) throws SQLException {
+
+
+    public void handleGenerateButton(ActionEvent actionEvent) throws SQLException, IOException, WriterException {
 
         Customer customer = this.customers.get(0);
         Event event=this.events.get(0);
@@ -77,6 +98,14 @@ public class GenerateTicketController implements Initializable {
         }else {
             Stage stage = (Stage) genBtn.getScene().getWindow();
             stage.close();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TicketFXML.fxml"));
+            Parent root = loader.load();
+            Stage ticketStage = new Stage();
+            ticketStage.setScene(new Scene(root));
+            ticketStage.setResizable(false);
+            ticketStage.setTitle("TicketQR");
+            ticketStage.show();
         }
 
     }

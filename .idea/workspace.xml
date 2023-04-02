@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_zxing_core.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventTicketManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventTicketManager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +117,7 @@
       <workItem from="1680210321394" duration="7221000" />
       <workItem from="1680218286855" duration="487000" />
       <workItem from="1680251710164" duration="1284000" />
+      <workItem from="1680439114990" duration="4885000" />
     </task>
     <servers />
   </component>

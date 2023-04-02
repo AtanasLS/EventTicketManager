@@ -33,8 +33,8 @@ public class EventDAO {
                     int id = resultSet.getInt("eventId");
                     String name = resultSet.getString("event_name");
                     String type = resultSet.getString("event_type");
-                    LocalDateTime startDate = resultSet.getDate("event_date").toLocalDate().atStartOfDay();
-                    LocalDateTime endDate = resultSet.getDate("event_end_date").toLocalDate().atStartOfDay();
+                    LocalDateTime startDate = resultSet.getTimestamp("event_date").toLocalDateTime();
+                    LocalDateTime endDate = resultSet.getTimestamp("event_end_date").toLocalDateTime();
                     String location = resultSet.getString("location");
 
                     //Creating movie object

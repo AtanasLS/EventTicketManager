@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +119,7 @@
       <workItem from="1680251710164" duration="1284000" />
       <workItem from="1680439114990" duration="9834000" />
       <workItem from="1680465543341" duration="1435000" />
+
     </task>
     <servers />
   </component>

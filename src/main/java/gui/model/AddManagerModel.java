@@ -33,6 +33,7 @@ public class AddManagerModel {
     public boolean addManager(String username, String password, String type) throws SQLException {
 
         List<User> users = mainViewModel.getAllUsers();
+
         boolean token = false;
         for (User u : users) {
             if (u.getUsername().equals(username)) {
@@ -43,12 +44,13 @@ public class AddManagerModel {
             if (mainViewModel.getAllUsers().size() != 0) {
                 User user = new User(mainViewModel.getAllUsers()
                         .get(mainViewModel.getAllUsers().size() - 1).getId() + 1, username, password, type);
+
                 //this.allUsers.add(user);
                 UserDAO.addNewUser(user);
                 mainViewModel.addUser(user);
             }else {
                 User user = new User(1, username, password, type);
-                // this.allUsers.add(user);
+
                 UserDAO.addNewUser(user);
                 mainViewModel.addUser(user);
             }

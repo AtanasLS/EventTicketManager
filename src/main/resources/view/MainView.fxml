@@ -38,5 +38,6 @@
       <MFXButton fx:id="logOutBtn" layoutX="766.0" layoutY="42.0" onAction="#handleLogOut" prefHeight="40.0" prefWidth="108.0" text="Log Out" />
 
       <MFXButton fx:id="changeBtn" layoutX="623.0" layoutY="41.0" onAction="#handleChangeView" prefHeight="40.0" prefWidth="108.0" text="Change View" />
+
     </children>
 </AnchorPane>

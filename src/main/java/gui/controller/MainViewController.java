@@ -56,10 +56,12 @@ public class MainViewController implements Initializable {
         model.loadFromDB();
         model.setAllManagers(model.getAllUsers());
         setEventTable(model.getAllEvents());
+
         setManagerTable();
         refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
 
     }
+
     public void setLoggedInUser(String userName, String type){
         nameLabel.setText("Welcome "+userName + "! Position: " + type);
     }
@@ -76,8 +78,7 @@ public class MainViewController implements Initializable {
         managerNameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
         managerTable.setItems(model.getAllManagers());
 
-    }
-
+}
     public void addManagerHandle(ActionEvent actionEvent) throws IOException, InterruptedException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddManagerView.fxml"));
         Parent root = loader.load();
@@ -130,6 +131,7 @@ public class MainViewController implements Initializable {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
             model.deleteUser(index);
             setManagerTable();
+
         }
 
     }
@@ -148,6 +150,7 @@ public class MainViewController implements Initializable {
     public void handleRefreshTables(ActionEvent actionEvent) {
         setManagerTable();
         setEventTable(model.getAllEvents());
+
     }
 
     public void handleLogOut(ActionEvent actionEvent) throws IOException {
@@ -158,8 +161,20 @@ public class MainViewController implements Initializable {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("Please Log In");
-
         stage.show();
+    }
+
+    public void handleChangeBtn(ActionEvent actionEvent) throws IOException {
+        ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView-EventCoordinator.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("Please Log In");
+        stage.show();
+        MainViewEventCoordinatorController controller = loader.getController();
+        controller.setLoggedInUser(" ","Admin");
     }
 
     public void handleChangeView(ActionEvent actionEvent) throws IOException {

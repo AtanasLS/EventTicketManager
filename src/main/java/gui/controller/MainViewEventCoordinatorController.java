@@ -32,6 +32,7 @@ public class MainViewEventCoordinatorController implements Initializable {
     public TableView<Event> eventTable;
     public MFXButton changeBtn;
     public Label userNameLbl;
+
     @FXML
     private TableColumn<Event, String> eventNameColumn, typeColumn, locationColumns;
     @FXML TableView<Customer> customersView;
@@ -54,6 +55,7 @@ public class MainViewEventCoordinatorController implements Initializable {
     public void setLoggedInUser(User u){
         System.out.println(u.getUsername());
         this.loggedInUser = u;
+
     }
     public void setLoggedInUserNames(String userName, String type){
 
@@ -141,6 +143,7 @@ public class MainViewEventCoordinatorController implements Initializable {
     }
 
     public void handleChangeView(ActionEvent actionEvent) throws IOException {
+
         ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
         Parent root = loader.load();

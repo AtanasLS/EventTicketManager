@@ -9,6 +9,7 @@ import dal.dao.EventDAO;
 import dal.dao.UserDAO;
 import dal.dao.UserToEventDAO;
 import gui.controller.MainViewController;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -87,6 +88,7 @@ public class MainViewModel {
 
          public ObservableList<Event> getAllEvents(){
         return    eventDAO.getAllEvents();
+
         }
 
         public void deleteEvent(int eventId,String index) throws SQLException {
@@ -105,6 +107,7 @@ public class MainViewModel {
         }
         return null;
     }
+
 
 
 

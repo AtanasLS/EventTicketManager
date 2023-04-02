@@ -31,6 +31,9 @@ public class AddNewTicketModel {
     public ObservableList<Event> getAllEvents(){
         return eventDAO.getAllEvents();
     }
+
+    private Event selectedEvent;
+    private Customer selectedCustomer;
     public boolean addTicket(int customerId, int eventId) throws SQLException {
         List<Ticket> tickets = getAllTickets();
         boolean token = false;
@@ -50,4 +53,15 @@ public class AddNewTicketModel {
             return token;
         }
     }
+    public void setCustomerAndEvent(Customer customer, Event event){
+        this.selectedCustomer = customer;
+        this.selectedEvent = event;
+    }
+    public Event getSelectedEvent(){
+        return selectedEvent;
+    }public Customer getSelectedCustomer(){
+        return selectedCustomer;
+    }
+
+
 }

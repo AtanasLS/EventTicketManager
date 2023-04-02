@@ -1,5 +1,8 @@
 package gui.controller;
 
+import be.Customer;
+import be.Event;
+import be.User;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
@@ -16,32 +19,38 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TicketController implements Initializable {
 
+    public Label startEndLbl;
+    public Label customerNameLbl;
+    public Label locationLbl;
+    public Label eventName;
     @FXML
     private  ImageView qrImage;
     @FXML
     private Label text;
-    private AddNewTicketModel addNewTicketModel;
+
+
+
+    private AddNewTicketModel addNewTicketModel ;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        addNewTicketModel = new AddNewTicketModel();
-
-
-        try {
-            qrImage.setImage(SwingFXUtils.toFXImage(createQR(addNewTicketModel.getAllEvents().get(0).getName(),200,200), null));
-        } catch (WriterException | IOException e) {
-            throw new RuntimeException(e);
-        }
 
     }
+    public void setLabels(String eventsName, String eventLocation, String customerName, LocalDateTime startDate, LocalDateTime endDate){
+        eventName.setText(eventsName);
+        locationLbl.setText(eventLocation);
+        customerNameLbl.setText(customerName);
+        startEndLbl.setText("Start Date: " + startDate + " End Date: " + endDate);
+    }
 
-    public BufferedImage createQR(String data,  int height, int width) throws WriterException, IOException {
+    public void createQR(String data,  int height, int width) throws WriterException, IOException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
 
         BufferedImage bufferedImage = null;
@@ -66,8 +75,7 @@ public class TicketController implements Initializable {
             Logger.getLogger(SetManagerController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        //qrImage.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
-        return bufferedImage;
+        qrImage.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
 
     }
 }

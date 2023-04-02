@@ -53,6 +53,9 @@ public class GenerateTicketController implements Initializable {
     private ObservableList<String> allCustomersNames = FXCollections.observableArrayList();
     private ObservableList<String> allEventsName = FXCollections.observableArrayList();
 
+
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model = new AddNewTicketModel();
@@ -96,16 +99,23 @@ public class GenerateTicketController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password");
             alert.showAndWait();
         }else {
-            Stage stage = (Stage) genBtn.getScene().getWindow();
-            stage.close();
+
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TicketFXML.fxml"));
             Parent root = loader.load();
             Stage ticketStage = new Stage();
+            TicketController controller = loader.getController();
+            System.out.println(event.getName());
+            controller.setLabels(event.getName(), event.getLocation(), customer.getName(), event.getEndDate(), event.getStartDate());
+            String data = "This ticket is to this customer: " + customer.getName();
+            controller.createQR(data, 100, 100);
             ticketStage.setScene(new Scene(root));
             ticketStage.setResizable(false);
             ticketStage.setTitle("TicketQR");
             ticketStage.show();
+
+            Stage stage = (Stage) genBtn.getScene().getWindow();
+            stage.close();
         }
 
     }

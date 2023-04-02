@@ -3,10 +3,30 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.TicketController">
+<AnchorPane prefHeight="269.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.TicketController">
    <children>
-      <ImageView fx:id="qrImage" fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="text" layoutX="204.0" layoutY="67.0" prefHeight="52.0" prefWidth="192.0" text="Label" />
+      <ImageView fx:id="qrImage" fitHeight="125.0" fitWidth="150.0" layoutX="385.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="eventName" layoutX="14.0" layoutY="14.0" prefHeight="57.0" prefWidth="330.0" text="Label">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="locationLbl" layoutX="10.0" layoutY="72.0" prefHeight="48.0" prefWidth="150.0" text="Label">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="startEndLbl" layoutX="10.0" layoutY="120.0" prefHeight="48.0" prefWidth="227.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="customerNameLbl" layoutX="10.0" layoutY="190.0" prefHeight="48.0" prefWidth="227.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

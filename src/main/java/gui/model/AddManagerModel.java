@@ -60,16 +60,12 @@ public class AddManagerModel {
             if (getAllCustomers().size() == 0) {
                 Customer customer = new Customer(1 , name, email);
                 CustomerDAO.addNewCustomer(customer);
-
-
             }else {
                 Customer customer = new Customer(getAllCustomers()
                         .get(getAllCustomers().size() - 1).getId() + 1, name, email);
                 CustomerDAO.addNewCustomer(customer);
 
             }
-
-
             return token;
         } else {
             return token;

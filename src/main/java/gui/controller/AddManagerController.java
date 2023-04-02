@@ -27,13 +27,13 @@ public class AddManagerController implements Initializable {
     public MFXComboBox eventsBox;
 
     private AddManagerModel model;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model=new AddManagerModel();
 
     }
-
+    public void setMainModel(MainViewModel mvm){
+        model = new AddManagerModel(mvm) ;
+    }
 
     public void addManager(ActionEvent actionEvent) throws SQLException {
 
@@ -57,8 +57,6 @@ public class AddManagerController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR, "This name or email already exist");
             alert.showAndWait();
         }else {
-
-
             Stage stage = (Stage) addBtn.getScene().getWindow();
             stage.close();
         }

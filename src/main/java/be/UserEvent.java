@@ -5,8 +5,7 @@ public class UserEvent {
     private int userId;
     private int eventId;
 
-    public UserEvent(int userId, int eventId){
-
+    public UserEvent(int eventId, int userId){
         this.userId = userId;
         this.eventId = eventId;
     }

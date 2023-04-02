@@ -28,7 +28,7 @@ public class LoginPageController implements Initializable {
 
     private LoginPageModel model;
 
-    public User loggedInUser ;
+
 
 
 
@@ -45,19 +45,18 @@ public class LoginPageController implements Initializable {
             User loggedInUser = model.getUser(usernameField.getText());
             if (loggedInUser.getType().equals("Event Coordinator")) {
                 try {
-
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView-EventCoordinator.fxml"));
                     Parent root = loader.load();
+                    MainViewEventCoordinatorController controller = loader.getController();
+                    controller.setLoggedInUserNames(loggedInUser.getUsername(), loggedInUser.getType());
+                    controller.setLoggedInUser(loggedInUser);
+
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
-                    MainViewEventCoordinatorController controller = loader.getController();
-                    controller.setLoggedInUser(loggedInUser.getUsername(), loggedInUser.getType());
                     stage.setFullScreen(false);
                     stage.setResizable(false);
                     stage.setTitle("Event Ticket Manager Beta");
                     stage.show();
-
-
                     ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
 
                 } catch (IOException e) {

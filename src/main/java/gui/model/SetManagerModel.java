@@ -32,18 +32,17 @@ public class SetManagerModel {
 
         final boolean[] token = new boolean[1];
 
-        UserEvent userEvent=new UserEvent(user.getId(),event.getId());
+        UserEvent userEvent=new UserEvent(event.getId(),user.getId());
 
         this.userToEventDAO.getUserToEvent().forEach(e->{
             if(e.getEventId()==userEvent.getEventId() && e.getUserId()==userEvent.getUserId()){
                 token[0] = false;
                 return;
+
             }
         });
 
         if (!token[0]) {
-
-
             userToEventDAO.addNewUserEvent(userEvent);
             return token[0];
         }else {

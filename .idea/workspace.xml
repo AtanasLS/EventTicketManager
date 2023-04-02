@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView-EventCoordinator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView-EventCoordinator.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,10 +112,14 @@
       <workItem from="1679663917486" duration="413000" />
       <workItem from="1679857622817" duration="426000" />
       <workItem from="1679897458106" duration="10317000" />
-      <workItem from="1679942067323" duration="6310000" />
-      <workItem from="1680077699178" duration="6379000" />
-      <workItem from="1680180026817" duration="5520000" />
-      <workItem from="1680189531081" duration="906000" />
+      <workItem from="1679942067323" duration="5918000" />
+      <workItem from="1680121112134" duration="4427000" />
+      <workItem from="1680210321394" duration="7221000" />
+      <workItem from="1680218286855" duration="487000" />
+      <workItem from="1680251710164" duration="1284000" />
+      <workItem from="1680439114990" duration="9834000" />
+      <workItem from="1680465543341" duration="1435000" />
+
     </task>
     <servers />
   </component>

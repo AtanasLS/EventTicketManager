@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import javax.naming.Name;
@@ -27,6 +28,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 public class MainViewController implements Initializable {
     @FXML
@@ -53,7 +55,8 @@ public class MainViewController implements Initializable {
         model = new MainViewModel();
         model.loadFromDB();
         model.setAllManagers(model.getAllUsers());
-        setEventTable();
+        setEventTable(model.getAllEvents());
+
         setManagerTable();
         refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
 
@@ -63,30 +66,29 @@ public class MainViewController implements Initializable {
         nameLabel.setText("Welcome "+userName + "! Position: " + type);
     }
 
-    public void setEventTable(){
+    public void setEventTable(ObservableList<Event> events){
         eventNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
-        eventTable.setItems(model.getAllEvents());
+        eventTable.setItems(events);
     }
     public void setManagerTable(){
-      //  model.loadFromDB();
         managerNameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
         managerTable.setItems(model.getAllManagers());
-    }
 
-    public void addManagerHandle(ActionEvent actionEvent) throws IOException {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddManagerView.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setResizable(false);
-            stage.setTitle("Add Manager");
-            stage.show();
-
+}
+    public void addManagerHandle(ActionEvent actionEvent) throws IOException, InterruptedException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddManagerView.fxml"));
+        Parent root = loader.load();
+        AddManagerController ctrl = loader.getController();
+        ctrl.setMainModel(model);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("Add Manager");
+        stage.show();
 
     }
 
@@ -128,7 +130,8 @@ public class MainViewController implements Initializable {
         if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() != null) {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
             model.deleteUser(index);
-           // setManagerTable();
+            setManagerTable();
+
         }
 
     }
@@ -139,14 +142,15 @@ public class MainViewController implements Initializable {
             int eventId = eventTable.getSelectionModel().getSelectedItem().getId();
 
             model.deleteEvent(eventId,index);
-            setEventTable();
+            setEventTable(model.getAllEvents());
         }
 
     }
 
     public void handleRefreshTables(ActionEvent actionEvent) {
-        managerTable.refresh();
-        eventTable.refresh();
+        setManagerTable();
+        setEventTable(model.getAllEvents());
+
     }
 
     public void handleLogOut(ActionEvent actionEvent) throws IOException {
@@ -171,6 +175,27 @@ public class MainViewController implements Initializable {
         stage.show();
         MainViewEventCoordinatorController controller = loader.getController();
         controller.setLoggedInUser(" ","Admin");
+    }
+
+    public void handleChangeView(ActionEvent actionEvent) throws IOException {
+
+            ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView-EventCoordinator.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.setTitle("Please Log In");
+            stage.show();
+            MainViewEventCoordinatorController controller = loader.getController();
+            controller.setLoggedInUserNames( " ","Admin");
+        }
+
+    public void handleShowAssignedEvents(MouseEvent mouseEvent) {
+        if (managerTable.getSelectionModel().getSelectedItem() != null){
+            User selectedUser = managerTable.getSelectionModel().getSelectedItem();
+            setEventTable(model.getAllUserToEventsName(selectedUser));
+        }
     }
 }
 

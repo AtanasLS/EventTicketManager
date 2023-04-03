@@ -3,6 +3,7 @@ package gui.controller;
 import be.Customer;
 import be.Event;
 import be.User;
+import gui.model.AddManagerModel;
 import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
@@ -39,37 +40,24 @@ public class MainViewEventCoordinatorController implements Initializable {
     @FXML TableColumn<Customer, String> customersName, customersEmail;
     @FXML
     private TableColumn<Event, Date> startDateColumn, endDateColumn;
-
-    private MainViewModel model = new MainViewModel();
-
-    private User loggedInUser;
-
-
-
+    private MainViewModel model;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        /*
+            model.loadFromDB();
             setEventTable();
             setCustomersTableView();
+
+         */
     }
 
-    public void setLoggedInUser(User u){
-        System.out.println(u.getUsername());
-        this.loggedInUser = u;
-
+    public void setMainModel(MainViewModel mvm){
+        this.model = mvm ;
+         // model.loadFromDB();
+        setCustomersTableView();
+        setEventTable();
+        nameLabel.setText("Welcome "+model.getLoggedInUser().getUsername() + "! Position: " + model.getLoggedInUser().getType());
     }
-    public void setLoggedInUserNames(String userName, String type){
-
-        if (type.equals("Event Coordinator")) {
-            userNameLbl.setText(userName);
-            nameLabel.setText("Welcome " + userName + "! Position: " + type);
-            changeBtn.setVisible(false);
-        }else {
-            nameLabel.setText("Now you are logged in as an Event Coordinator!");
-            changeBtn.setVisible(true);
-        }
-
-    }
-
 
     public void setEventTable() {
         eventNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -77,9 +65,11 @@ public class MainViewEventCoordinatorController implements Initializable {
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
-        System.out.println(this.loggedInUser);
-        if (loggedInUser!= null) {
-            eventTable.setItems(model.getAllUserToEventsName(loggedInUser));
+        System.out.println(model.getLoggedInUser().getUsername());
+        if (model.getLoggedInUser().getType().equals("Event Coordinator")) {
+            eventTable.setItems(model.getAllUserToEventsName(model.getLoggedInUser()));
+        }else if (model.getLoggedInUser().getType().equals("Admin")){
+            eventTable.setItems(model.getAllEvents());
         }
     }
     public void setCustomersTableView(){
@@ -119,6 +109,8 @@ public class MainViewEventCoordinatorController implements Initializable {
     public void handleCreateCustomer(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AddCustomer.fxml"));
         Parent root = loader.load();
+        AddManagerController controller = loader.getController();
+        controller.setMainModel(model);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
@@ -152,14 +144,7 @@ public class MainViewEventCoordinatorController implements Initializable {
         stage.setResizable(false);
         stage.show();
         MainViewController controller = loader.getController();
-        User admin = null;
-        for (User u: model.getAllUsers()) {
-            if (u.getType().equals("Admin")){
-                admin = u;
-            }
-        }
-
-        controller.setLoggedInUser(admin.getUsername(), admin.getType());
-
+        controller.setMainModel(model);
+        controller.nameLabel.setText("Welcome back " + model.getLoggedInUser().getUsername());
     }
 }

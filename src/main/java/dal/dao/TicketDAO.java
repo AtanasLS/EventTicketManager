@@ -71,4 +71,17 @@ public class TicketDAO {
             }
         }
     }
+    public static void removeTicketWithThisEvent(int eventID) throws SQLException{
+        //Creating dbConnector instance
+        DataAccessManager dataAccessManager = new DataAccessManager();
+        try(Connection connection = dataAccessManager.getConnection()) {
+            String sql = "Delete FROM [CSe2022B_Event_Ticket_Manager].[dbo].[ticket] where eventId=" + eventID +';';
+            System.out.println(sql);
+            Statement statement = connection.createStatement();
+            if(statement.execute(sql)){
+                ResultSet resultSet = statement.getResultSet();
+                System.out.println("Removed correctly");
+            }
+        }
+    }
 }

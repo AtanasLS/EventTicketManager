@@ -31,6 +31,7 @@ public class AddManagerController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
     public void setMainModel(MainViewModel mvm){
         model = new AddManagerModel(mvm) ;
     }

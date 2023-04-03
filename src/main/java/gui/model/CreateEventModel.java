@@ -11,18 +11,23 @@ import java.util.List;
 
 public class CreateEventModel {
 
-    EventDAO eventDAO=new EventDAO();
+    MainViewModel mainViewModel;
+    public CreateEventModel(MainViewModel mvm) {
+        this.mainViewModel = mvm;
+    }
+
     public void createEvent(String eventName, String eventType, LocalDateTime startDate, LocalDateTime endDate, String location) throws SQLException {
-         List<Event> events= this.eventDAO.getAllEvents();
+         List<Event> events= this.mainViewModel.getAllEvents();
          if (events.size() == 0){
 
              Event event = new Event(1,eventName, eventType, startDate, endDate, location);
-             this.eventDAO.addNewEvent(event);
+             this.mainViewModel.addEvent(event);
+             EventDAO.addNewEvent(event);
          }else {
-             Event event = new Event(eventDAO.getAllEvents()
-                     .get(eventDAO.getAllEvents().size() - 1).getId() + 1, eventName, eventType, startDate, endDate, location);
-
-             this.eventDAO.addNewEvent(event);
+             Event event = new Event(mainViewModel.getAllEvents()
+                     .get(mainViewModel.getAllEvents().size() - 1).getId() + 1, eventName, eventType, startDate, endDate, location);
+             EventDAO.addNewEvent(event);
+             this.mainViewModel.addEvent(event);
          }
     }
 

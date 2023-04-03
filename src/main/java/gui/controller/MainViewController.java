@@ -3,6 +3,8 @@ package gui.controller;
 import be.Event;
 import be.User;
 import com.sun.tools.javac.Main;
+import gui.model.AddManagerModel;
+import gui.model.CreateEventModel;
 import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.collections.ObservableList;
@@ -52,18 +54,17 @@ public class MainViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model = new MainViewModel();
-        model.loadFromDB();
-        model.setAllManagers(model.getAllUsers());
-        setEventTable(model.getAllEvents());
+    }
 
+    public void setMainModel(MainViewModel mvm){
+        model = mvm ;
+       // model.loadFromDB();
+
+        setEventTable(model.getAllEvents());
+         nameLabel.setText("Welcome "+model.getLoggedInUser().getUsername() + "! Position: " + model.getLoggedInUser().getType());
         setManagerTable();
         refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
 
-    }
-
-    public void setLoggedInUser(String userName, String type){
-        nameLabel.setText("Welcome "+userName + "! Position: " + type);
     }
 
     public void setEventTable(ObservableList<Event> events){
@@ -76,6 +77,7 @@ public class MainViewController implements Initializable {
     }
     public void setManagerTable(){
         managerNameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
+        model.setAllManagers(model.getAllUsers());
         managerTable.setItems(model.getAllManagers());
 
 }
@@ -99,17 +101,17 @@ public class MainViewController implements Initializable {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("Add Manager");
-
         stage.show();
     }
     public void addEventHandle(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CreateEvent.fxml"));
         Parent root = loader.load();
+        CreateEventController ctrl = loader.getController();
+        ctrl.setMainModel(model);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("Create Event");
-
         stage.show();
     }
     public void generateTIcketHandle(ActionEvent actionEvent) throws IOException {
@@ -120,29 +122,22 @@ public class MainViewController implements Initializable {
         stage.setScene(new Scene(root));
         stage.setResizable(false);
         stage.setTitle("Generate Ticket");
-
         stage.show();
     }
 
     public void delManagerHandle(ActionEvent actionEvent) throws SQLException {
 
-
         if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() != null) {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
             model.deleteUser(index);
-            setManagerTable();
-
         }
-
     }
 
     public void delEventHandle(ActionEvent actionEvent) throws SQLException {
         if (eventTable != null && eventTable.getSelectionModel().getSelectedItem().getName() != null) {
             String index = eventTable.getSelectionModel().getSelectedItem().getName();
             int eventId = eventTable.getSelectionModel().getSelectedItem().getId();
-
             model.deleteEvent(eventId,index);
-            setEventTable(model.getAllEvents());
         }
 
     }
@@ -164,18 +159,6 @@ public class MainViewController implements Initializable {
         stage.show();
     }
 
-    public void handleChangeBtn(ActionEvent actionEvent) throws IOException {
-        ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView-EventCoordinator.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setResizable(false);
-        stage.setTitle("Please Log In");
-        stage.show();
-        MainViewEventCoordinatorController controller = loader.getController();
-        controller.setLoggedInUser(" ","Admin");
-    }
 
     public void handleChangeView(ActionEvent actionEvent) throws IOException {
 
@@ -188,7 +171,8 @@ public class MainViewController implements Initializable {
             stage.setTitle("Please Log In");
             stage.show();
             MainViewEventCoordinatorController controller = loader.getController();
-            controller.setLoggedInUserNames( " ","Admin");
+            controller.setMainModel(model);
+            controller.userNameLbl.setText("You are now logged in as Event Coordinator!");
         }
 
     public void handleShowAssignedEvents(MouseEvent mouseEvent) {

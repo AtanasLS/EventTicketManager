@@ -3,6 +3,7 @@ package gui.controller;
 import be.User;
 import dal.dao.UserDAO;
 import gui.model.LoginPageModel;
+import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,17 +27,12 @@ public class LoginPageController implements Initializable {
     @FXML
     public MFXTextField usernameField, passwordField;
 
-    private LoginPageModel model;
-
-
-
-
-
-
+    private MainViewModel model;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-         model = new LoginPageModel();
+         model = new MainViewModel();
+         model.loadFromDB();
     }
 
 
@@ -48,9 +44,7 @@ public class LoginPageController implements Initializable {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView-EventCoordinator.fxml"));
                     Parent root = loader.load();
                     MainViewEventCoordinatorController controller = loader.getController();
-                    controller.setLoggedInUserNames(loggedInUser.getUsername(), loggedInUser.getType());
-                    controller.setLoggedInUser(loggedInUser);
-
+                    controller.setMainModel(model);
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
                     stage.setFullScreen(false);
@@ -73,7 +67,8 @@ public class LoginPageController implements Initializable {
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root));
                     MainViewController controller = loader.getController();
-                    controller.setLoggedInUser(loggedInUser.getUsername(), loggedInUser.getType());
+                    controller.setMainModel(model);
+                   // controller.setLoggedInUser(loggedInUser.getUsername(), loggedInUser.getType());
                     stage.setFullScreen(false);
                     stage.setResizable(false);
                     stage.setTitle("Event Ticket Manager Beta");

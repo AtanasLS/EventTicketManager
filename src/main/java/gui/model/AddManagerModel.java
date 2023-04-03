@@ -15,13 +15,7 @@ import java.util.List;
 
 public class AddManagerModel {
 
-    //UserDAO userDAO = new UserDAO();
-
-    CustomerDAO customerDAO = new CustomerDAO();
-
     MainViewModel mainViewModel;
-
-
 
     public AddManagerModel(MainViewModel mainViewModel) {
         this.mainViewModel = mainViewModel;
@@ -60,10 +54,10 @@ public class AddManagerModel {
         }
     }
     public boolean addCustomer(String name, String email) throws SQLException {
-        List<Customer> users = CustomerDAO.getAllCustomers();
+        List<Customer> customers = mainViewModel.getAllCustomers();
         boolean token = false;
 
-        for (Customer c : users) {
+        for (Customer c : customers) {
             if (c.getName().equals(name)) {
                 token = true;
             }
@@ -71,14 +65,16 @@ public class AddManagerModel {
 
         if (!token) {
 
-            if (getAllCustomers().size() == 0) {
+            if (mainViewModel.getAllCustomers().size() == 0) {
                 Customer customer = new Customer(1 , name, email);
                 CustomerDAO.addNewCustomer(customer);
+                mainViewModel.addCustomer(customer);
 
             }else {
-                Customer customer = new Customer(getAllCustomers()
-                        .get(getAllCustomers().size() - 1).getId() + 1, name, email);
+                Customer customer = new Customer(mainViewModel.getAllCustomers()
+                        .get(mainViewModel.getAllCustomers().size() - 1).getId() + 1, name, email);
                 CustomerDAO.addNewCustomer(customer);
+                mainViewModel.addCustomer(customer);
             }
             return token;
         } else {
@@ -86,10 +82,6 @@ public class AddManagerModel {
         }
     }
 
-
-    public ObservableList<Customer> getAllCustomers() {
-        return CustomerDAO.getAllCustomers();
-    }
     /*
     /// TODO - Implement it in SetManagerModel
     public ObservableList<String> getEventsName() {

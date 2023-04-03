@@ -1,7 +1,9 @@
 package gui.controller;
 
 
+import gui.model.AddManagerModel;
 import gui.model.CreateEventModel;
+import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
@@ -38,8 +40,10 @@ public class CreateEventController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
 
-        model=new CreateEventModel();
+    public void setMainModel(MainViewModel mvm){
+        model = new CreateEventModel(mvm) ;
     }
 
     public void createEvent(ActionEvent actionEvent) throws SQLException {

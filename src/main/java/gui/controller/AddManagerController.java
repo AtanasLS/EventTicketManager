@@ -36,6 +36,7 @@ public class AddManagerController implements Initializable {
         model = new AddManagerModel(mvm) ;
     }
 
+
     public void addManager(ActionEvent actionEvent) throws SQLException {
 
         if (model.addManager(usernameField.getText(),passwordField.getText(),"Event Coordinator")){

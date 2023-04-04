@@ -2,6 +2,8 @@ package gui.controller;
 
 import be.Event;
 import be.User;
+import gui.model.AddManagerModel;
+import gui.model.MainViewModel;
 import gui.model.SetManagerModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
@@ -36,14 +38,16 @@ public class SetManagerController implements Initializable {
     private ObservableList<String> eventsList=FXCollections.observableArrayList();
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model=new SetManagerModel();
-        this.managers=model.getAllUsers();
-        this.events=model.getAllEvents();
+
+    }
+    public void setMainModel(MainViewModel mvm){
+        model = new SetManagerModel(mvm) ;
+
+        this.managers=mvm.getAllManagers();
+        this.events=mvm.getAllEvents();
 
         for (User u:managers) {
-            if (u.getType().equals("Event Coordinator")){
                 this.managersList.add(u.getUsername());
-            }
         }
 
         for (Event e:events) {
@@ -52,8 +56,6 @@ public class SetManagerController implements Initializable {
         }
         managerBox.setItems( managersList);
         eventBox.setItems( eventsList);
-        
-
     }
 
     public void setBtn(ActionEvent actionEvent) throws SQLException {
@@ -66,7 +68,6 @@ public class SetManagerController implements Initializable {
             }
 
         }
-
         for (Event e:events) {
             if (e.getName().equals(eventBox.getSelectionModel().getSelectedItem())){
                 event=e;

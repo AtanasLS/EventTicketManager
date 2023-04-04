@@ -97,6 +97,8 @@ public class MainViewController implements Initializable {
     public void setManagerHandle(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SetManagerView.fxml"));
         Parent root = loader.load();
+        SetManagerController controller = loader.getController();
+        controller.setMainModel(model);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);

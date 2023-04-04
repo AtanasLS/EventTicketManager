@@ -24,6 +24,7 @@ public class MainViewModel {
         private final ObservableList<Event> allEvents;
         private final ObservableList<Customer> allCustomers;
         private final ObservableList<UserEvent> allUserEvents;
+        private final ObservableList<Event> userToEventsNames;
 
         public MainViewModel(){
         this.allUsers = FXCollections.observableArrayList();
@@ -31,6 +32,7 @@ public class MainViewModel {
         this.allManagers = FXCollections.observableArrayList();
         this.allCustomers = FXCollections.observableArrayList();
         this.allUserEvents = FXCollections.observableArrayList();
+        this.userToEventsNames = FXCollections.observableArrayList();
         this.loggedInUser = null;
         }
 
@@ -82,19 +84,23 @@ public class MainViewModel {
     }
 
     public ObservableList<Event> getAllUserToEventsName(User selectedUser){
-        ObservableList<Event> userToEventsNames = FXCollections.observableArrayList();
+
 
             for (Event e: getAllEvents()) {
                 for (UserEvent uToE: getAllUserEvents()) {
                     if (selectedUser.getId() == uToE.getUserId() && e.getId() == uToE.getEventId()){
-                        userToEventsNames.add(e);
+                        this.userToEventsNames.add(e);
                     }
                 }
             }
-        return userToEventsNames;
+        return this.userToEventsNames;
         }
         public void addEvent(Event eventToAdd){
             allEvents.add(eventToAdd);
+        }
+        public void addUserEvent(UserEvent newUserEvent){
+            allUserEvents.add(newUserEvent);
+            getAllUserEvents();
         }
 
          public ObservableList<Event> getAllEvents(){return    allEvents;}

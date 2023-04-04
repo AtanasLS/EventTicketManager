@@ -17,16 +17,14 @@ public class SetManagerModel {
     private EventDAO eventDAO =new EventDAO();
     private UserToEventDAO userToEventDAO = new UserToEventDAO();
 
+    MainViewModel mainViewModel;
 
-
-
-    public ObservableList<User>getAllUsers(){
-        return this.userDAO.getAllUsers();
+    public SetManagerModel(MainViewModel mainViewModel) {
+        this.mainViewModel = mainViewModel;
     }
 
-    public ObservableList<Event>getAllEvents(){
-        return this.eventDAO.getAllEvents();
-    }
+
+
 
     public boolean setManagerToEvent(User user,Event event) throws SQLException {
 
@@ -34,16 +32,15 @@ public class SetManagerModel {
 
         UserEvent userEvent=new UserEvent(event.getId(),user.getId());
 
-        this.userToEventDAO.getUserToEvent().forEach(e->{
+        mainViewModel.getAllUserEvents().forEach(e->{
             if(e.getEventId()==userEvent.getEventId() && e.getUserId()==userEvent.getUserId()){
                 token[0] = false;
-                return;
-
             }
         });
 
         if (!token[0]) {
             userToEventDAO.addNewUserEvent(userEvent);
+            mainViewModel.addUserEvent(userEvent);
             return token[0];
         }else {
             return token[0];

@@ -2,7 +2,7 @@ package gui.controller;
 
 import be.User;
 import dal.dao.UserDAO;
-import gui.model.LoginPageModel;
+
 import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.collections.ObservableList;

@@ -79,12 +79,12 @@ public class GenerateTicketController implements Initializable {
 
     public void handleGenerateButton(ActionEvent actionEvent) throws SQLException, IOException, WriterException {
 
-        Customer customer = this.customers.get(0);
-        Event event=this.events.get(0);
+        Customer customer = null;
+        Event event= null;
 
         for (Customer c:this.customers) {
             if (c.getName().equals(customerComboBox.getSelectionModel().getSelectedItem())){
-                c = customer;
+                customer = c;
             }
 
         }
@@ -99,8 +99,6 @@ public class GenerateTicketController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password");
             alert.showAndWait();
         }else {
-
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TicketFXML.fxml"));
             Parent root = loader.load();
             Stage ticketStage = new Stage();

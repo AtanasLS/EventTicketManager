@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -124,7 +117,8 @@
       <workItem from="1680439114990" duration="9834000" />
       <workItem from="1680465543341" duration="1435000" />
       <workItem from="1680553111224" duration="5592000" />
-      <workItem from="1680619909296" duration="2886000" />
+      <workItem from="1680619909296" duration="3661000" />
+      <workItem from="1680721631242" duration="3645000" />
     </task>
     <servers />
   </component>

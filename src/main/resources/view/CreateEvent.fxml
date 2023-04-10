@@ -10,7 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import tornadofx.control.DateTimePicker?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateEventController">
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" styleClass="stage" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.CreateEventController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
     <top>
         <VBox prefHeight="69.0" prefWidth="486.0" BorderPane.alignment="CENTER">
             <children>
@@ -85,7 +89,7 @@
                     <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                                <MFXButton fx:id="createBtn" onAction="#createEvent" prefHeight="38.0" prefWidth="106.0" text="Create">
+                                <MFXButton fx:id="createBtn" styleClass="button" onAction="#createEvent" prefHeight="38.0" prefWidth="106.0" text="Create">
                                     <HBox.margin>
                                         <Insets top="25.0" />
                                     </HBox.margin>
@@ -95,7 +99,7 @@
                         <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
 
-                                <MFXButton fx:id="closeB" onAction="#close" prefHeight="38.0" prefWidth="106.0" text="Close">
+                                <MFXButton fx:id="closeB" styleClass="button" onAction="#close" prefHeight="38.0" prefWidth="106.0" text="Close">
                                     <HBox.margin>
                                         <Insets top="25.0" />
                                     </HBox.margin>

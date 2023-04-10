@@ -1,0 +1,26 @@
+.button{
+    -fx-background-color: #146C94;
+    -fx-text-fill: #020202;
+    -fx-font-weight: bold;
+
+}
+
+.table{
+
+}
+
+.stage{
+    -fx-background-color: #FFFFFF;
+
+
+}
+
+.Tstage{
+    -fx-background: linear-gradient( #19A7CE 30.52%, #146C94 73.94%);
+}
+
+.shadow{
+    -fx-text-shadow: 5px 5px 4px #000000;
+    -fx-text-transform: uppercase;
+
+}

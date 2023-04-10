@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="269.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.TicketController">
+<AnchorPane prefHeight="269.0" prefWidth="577.0" styleClass="Tstage" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.TicketController">
+   <stylesheets>
+      <URL value="@../css/style.css" />
+   </stylesheets>
    <children>
       <ImageView fx:id="qrImage" fitHeight="125.0" fitWidth="150.0" layoutX="385.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="eventName" layoutX="14.0" layoutY="14.0" prefHeight="57.0" prefWidth="330.0" text="Label">
+      <Label fx:id="eventName" layoutX="14.0" layoutY="14.0" prefHeight="57.0" prefWidth="330.0" styleClass="shadow" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="25.0" />
+            <Font name="System Bold" size="50.0" />
          </font>
       </Label>
-      <Label fx:id="locationLbl" layoutX="10.0" layoutY="72.0" prefHeight="48.0" prefWidth="150.0" text="Label">
+      <Label fx:id="locationLbl" layoutX="14.0" layoutY="72.0" prefHeight="48.0" prefWidth="150.0" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="14.0" />
+            <Font name="System Italic" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="startEndLbl" layoutX="10.0" layoutY="120.0" prefHeight="48.0" prefWidth="227.0" text="Label">
+      <Label fx:id="startEndLbl" layoutX="10.0" layoutY="129.0" prefHeight="30.0" prefWidth="110.0" styleClass="shadow" text="Label" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="customerNameLbl" layoutX="10.0" layoutY="190.0" prefHeight="48.0" prefWidth="227.0" text="Label">
+      <Label fx:id="customerNameLbl" layoutX="10.0" layoutY="190.0" prefHeight="48.0" prefWidth="227.0" styleClass="shadow" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="startEndLbl1" layoutX="10.0" layoutY="159.0" prefHeight="30.0" prefWidth="110.0" styleClass="shadow" text="Label" textFill="WHITE">
          <font>
             <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="locationLbl1" layoutX="10.0" layoutY="224.0" prefHeight="48.0" prefWidth="150.0" styleClass="shadow" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="15.0" />
          </font>
       </Label>
    </children>

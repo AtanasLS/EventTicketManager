@@ -9,7 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddManagerController">
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" styleClass="stage" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddManagerController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
     <top>
         <VBox prefHeight="70.0" prefWidth="486.0" BorderPane.alignment="CENTER">
             <children>
@@ -38,7 +42,7 @@
             <children>
                 <HBox prefHeight="54.0" prefWidth="286.0">
                     <children>
-                        <MFXTextField fx:id="usernameField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Username">
+                        <MFXTextField styleClass="input" fx:id="usernameField" floatMode="ABOVE" prefHeight="50.0" prefWidth="282.0" promptText="Username">
                             <font>
                                 <Font size="17.0" />
                             </font>
@@ -47,7 +51,7 @@
                 </HBox>
                 <HBox prefHeight="53.0" prefWidth="286.0">
                     <children>
-                        <MFXTextField fx:id="passwordField" floatMode="ABOVE" prefHeight="64.0" prefWidth="282.0" promptText="Password">
+                        <MFXTextField styleClass="input" fx:id="passwordField" floatMode="ABOVE" prefHeight="64.0" prefWidth="282.0" promptText="Password">
                             <font>
                                 <Font size="17.0" />
                             </font>
@@ -58,7 +62,7 @@
                     <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                                <MFXButton fx:id="addBtn" onAction="#addManager" prefHeight="38.0" prefWidth="106.0" text="Add">
+                                <MFXButton styleClass="button" fx:id="addBtn" onAction="#addManager" prefHeight="38.0" prefWidth="106.0" text="Add">
                                     <HBox.margin>
                                         <Insets top="10.0" />
                                     </HBox.margin>
@@ -68,7 +72,7 @@
                         <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
 
-                                <MFXButton fx:id="closeB" onAction="#close" prefHeight="38.0" prefWidth="106.0" text="Cancel">
+                                <MFXButton styleClass="button" fx:id="closeB" onAction="#close" prefHeight="38.0" prefWidth="106.0" text="Cancel">
                                     <HBox.margin>
                                         <Insets top="10.0" />
                                     </HBox.margin>

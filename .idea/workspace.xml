@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/controller/AllTicketsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/model/AllTicketsModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bll/CustomerLogicManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bll/EventLogicManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AddCustomer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/AddCustomer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/AddManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/AddManagerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/CreateEvent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/GenerateTicketView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/GenerateTicketView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/LoginPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/LoginPageView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView-EventCoordinator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView-EventCoordinator.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/SetManagerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/SetManagerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/TicketFXML.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/TicketFXML.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -122,6 +133,7 @@
       <workItem from="1680619909296" duration="3661000" />
       <workItem from="1680721631242" duration="5518000" />
       <workItem from="1680885610627" duration="1461000" />
+      <workItem from="1681143018418" duration="6228000" />
     </task>
     <servers />
   </component>

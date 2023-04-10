@@ -9,7 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.SetManagerController">
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" styleClass="stage" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.SetManagerController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
     <top>
         <VBox prefHeight="70.0" prefWidth="486.0" BorderPane.alignment="CENTER">
             <children>
@@ -72,7 +76,7 @@
                     <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                                <MFXButton fx:id="addBtn" onAction="#setBtn" prefHeight="38.0" prefWidth="106.0" text="Set">
+                                <MFXButton fx:id="addBtn" styleClass="button" onAction="#setBtn" prefHeight="38.0" prefWidth="106.0" text="Set">
                                     <HBox.margin>
                                         <Insets top="10.0" />
                                     </HBox.margin>
@@ -81,7 +85,7 @@
                         <HBox prefHeight="100.0" prefWidth="200.0" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <MFXButton fx:id="cancelBtn" onAction="#cancelBtn" prefHeight="38.0" prefWidth="120.0" text="Cancel">
+                        <MFXButton fx:id="cancelBtn" styleClass="button" onAction="#cancelBtn" prefHeight="38.0" prefWidth="120.0" text="Cancel">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>

@@ -10,7 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.LoginPageController">
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" styleClass="stage" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.LoginPageController">
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
     <top>
         <VBox prefHeight="69.0" prefWidth="486.0" BorderPane.alignment="CENTER">
             <children>
@@ -59,7 +63,7 @@
                     <children>
                         <HBox prefHeight="58.0" prefWidth="155.0">
                             <children>
-                                <MFXButton fx:id="signInBtn" prefHeight="37.0" prefWidth="80.0" text="Sign In">
+                                <MFXButton fx:id="signInBtn" styleClass="button" prefHeight="37.0" prefWidth="80.0" text="Sign In">
                                     <HBox.margin>
                                         <Insets left="30.0" top="10.0" />
                                     </HBox.margin>
@@ -68,7 +72,7 @@
                         </HBox>
                         <HBox prefHeight="58.0" prefWidth="146.0">
                             <children>
-                                <MFXButton fx:id="logInBtn" onAction="#logIn" prefHeight="40.0" prefWidth="74.0" text="Log In">
+                                <MFXButton fx:id="logInBtn" styleClass="button" onAction="#logIn" prefHeight="40.0" prefWidth="74.0" text="Log In">
                                     <HBox.margin>
                                         <Insets left="30.0" top="10.0" />
                                     </HBox.margin>

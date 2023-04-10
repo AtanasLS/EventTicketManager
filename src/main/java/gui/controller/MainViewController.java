@@ -94,6 +94,20 @@ public class MainViewController implements Initializable {
 
     }
 
+
+    public void seeAllTickets(ActionEvent actionEvent) throws IOException, InterruptedException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AllTickets.fxml"));
+        Parent root = loader.load();
+        AllTicketsController ctrl = loader.getController();
+        ctrl.setTicketModel(model);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("All Tickets");
+        stage.show();
+
+    }
+
     public void setManagerHandle(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/SetManagerView.fxml"));
         Parent root = loader.load();

@@ -17,10 +17,6 @@ public class Admin {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getType() {
         return type;
     }
@@ -44,5 +40,6 @@ public class Admin {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
 }

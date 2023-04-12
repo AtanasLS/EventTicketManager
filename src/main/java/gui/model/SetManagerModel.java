@@ -27,7 +27,7 @@ public class SetManagerModel {
 
 
     public boolean setManagerToEvent(User user,Event event) throws Exception {
-
+/*
         final boolean[] token = new boolean[1];
 
         UserEvent userEvent=new UserEvent(event.getId(),user.getId());
@@ -44,9 +44,17 @@ public class SetManagerModel {
             return token[0];
         }else {
             return token[0];
-        }
+        }*/
 
+        for (UserEvent e : mainViewModel.getAllUserEvents())
+            if(e.getEventId()==event.getId()&& e.getUserId()==user.getId()){
+                UserEvent userEvent=new UserEvent(event.getId(),user.getId());
+                appLogicManager.addNewUserEvent(userEvent);
+                mainViewModel.addUserEvent(userEvent);
+                return false;
+            }
 
+        return true;
 
     }
 }

@@ -22,6 +22,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -109,7 +110,7 @@ public class GenerateTicketController implements Initializable {
             Stage ticketStage = new Stage();
             TicketController controller = loader.getController();
             System.out.println(event.getName());
-            controller.setLabels(event.getName(), event.getLocation(), customer.getName(), event.getEndDate(), event.getStartDate());
+            controller.setLabels(event.getName(), event.getLocation(), customer.getName(), event.getEndDate(), event.getStartDate(),customer.getEmail());
             String data = "This ticket is to this customer: " + customer.getName();
             controller.createQR(data, 100, 100);
             ticketStage.setScene(new Scene(root));
@@ -118,6 +119,14 @@ public class GenerateTicketController implements Initializable {
             ticketStage.show();
 
             Stage stage = (Stage) genBtn.getScene().getWindow();
+
+            System.out.println("To Printer!");
+            PrinterJob job = PrinterJob.createPrinterJob();
+            if(job != null) {
+                job.showPrintDialog(ticketStage);
+                job.printPage(root);
+                job.endJob();
+            }
             stage.close();
         }
 

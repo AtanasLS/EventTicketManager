@@ -20,15 +20,26 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TicketController implements Initializable {
 
+
+    @FXML
+    public Label endLbl1;
+    @FXML
+    public Label email;
+
+    @FXML
     public Label startEndLbl;
+    @FXML
     public Label customerNameLbl;
+    @FXML
     public Label locationLbl;
+    @FXML
     public Label eventName;
     @FXML
     private  ImageView qrImage;
@@ -43,11 +54,16 @@ public class TicketController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    public void setLabels(String eventsName, String eventLocation, String customerName, LocalDateTime startDate, LocalDateTime endDate){
+    public void setLabels(String eventsName, String eventLocation, String customerName, LocalDateTime startDate, LocalDateTime endDate,String email){
         eventName.setText(eventsName);
         locationLbl.setText(eventLocation);
-        customerNameLbl.setText(customerName);
-        startEndLbl.setText("Start Date: " + startDate + " End Date: " + endDate);
+        customerNameLbl.setText(email);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY HH:MM");
+
+
+        startEndLbl.setText("Start Date: " + formatter.format(startDate) );
+        endLbl1.setText(" End Date: " + formatter.format(endDate));
+        this.email.setText(customerName);
     }
 
     public void createQR(String data,  int height, int width) throws WriterException, IOException {

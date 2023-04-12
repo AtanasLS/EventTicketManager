@@ -6,20 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36a6d2c9-4e43-4a00-b465-3a652d1bf24f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bll/AppLogicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bll/AppLogicManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/AddManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/AllTicketsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/AllTicketsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/CreateEventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/GenerateTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/LoginPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/MainViewEventCoordinatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/controller/SetManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddManagerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AddNewTicketModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AddNewTicketModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/AllTicketsModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/AllTicketsModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/CreateEventModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/MainViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/model/SetManagerModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,6 +124,7 @@
       <workItem from="1680885610627" duration="1461000" />
       <workItem from="1681143018418" duration="6228000" />
       <workItem from="1681260546216" duration="1893000" />
+      <workItem from="1681289068867" duration="4388000" />
     </task>
     <servers />
   </component>

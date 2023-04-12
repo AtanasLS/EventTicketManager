@@ -35,7 +35,7 @@ public class AllTicketsController implements Initializable {
 
     }
 
-    public void setTicketModel(MainViewModel model){
+    public void setTicketModel(MainViewModel model) throws Exception {
         this.model = new AllTicketsModel() ;
         setTicketTable(this.model.loadFromDB());
     }

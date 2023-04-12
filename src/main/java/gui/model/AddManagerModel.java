@@ -3,6 +3,7 @@ package gui.model;
 import be.Customer;
 import be.Event;
 import be.User;
+import bll.AppLogicManager;
 import dal.dao.CustomerDAO;
 import dal.dao.EventDAO;
 import dal.dao.UserDAO;
@@ -16,15 +17,17 @@ import java.util.List;
 public class AddManagerModel {
 
     MainViewModel mainViewModel;
+    private AppLogicManager appLogicManager;
 
     public AddManagerModel(MainViewModel mainViewModel) {
+        this.appLogicManager = new AppLogicManager();
         this.mainViewModel = mainViewModel;
     }
 
 
 
 
-    public boolean addManager(String username, String password, String type) throws SQLException {
+    public boolean addManager(String username, String password, String type) throws Exception {
 
         List<User> users = mainViewModel.getAllUsers();
 
@@ -40,12 +43,12 @@ public class AddManagerModel {
                         .get(mainViewModel.getAllUsers().size() - 1).getId() + 1, username, password, type);
 
                 //this.allUsers.add(user);
-                UserDAO.addNewUser(user);
+                appLogicManager.addNewUser(user);
                 mainViewModel.addUser(user);
             }else {
                 User user = new User(1, username, password, type);
 
-                UserDAO.addNewUser(user);
+                appLogicManager.addNewUser(user);
                 mainViewModel.addUser(user);
             }
             return token;

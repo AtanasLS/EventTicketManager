@@ -4,6 +4,7 @@ import be.Customer;
 import be.Event;
 import be.Ticket;
 import be.User;
+import bll.AppLogicManager;
 import dal.dao.CustomerDAO;
 import dal.dao.EventDAO;
 import dal.dao.TicketDAO;
@@ -14,28 +15,17 @@ import java.util.List;
 
 public class AddNewTicketModel {
 
-    TicketDAO ticketDAO = new TicketDAO();
-    CustomerDAO customerDAO = new CustomerDAO();
-    EventDAO eventDAO = new EventDAO();
-
-    public AddNewTicketModel(){
-
-    }
-    public ObservableList<Ticket> getAllTickets(){
-        return ticketDAO.getAllTickets();
-    }
-
-    public ObservableList<Customer> getAllCustomers(){
-      return   customerDAO.getAllCustomers();
-    }
-    public ObservableList<Event> getAllEvents(){
-        return eventDAO.getAllEvents();
+    MainViewModel mainViewModel;
+    private AppLogicManager appLogicManager;
+    public AddNewTicketModel(MainViewModel mainViewModel){
+        this.mainViewModel = mainViewModel;
+        this.appLogicManager = new AppLogicManager();
     }
 
     private Event selectedEvent;
     private Customer selectedCustomer;
-    public boolean addTicket(int customerId, int eventId) throws SQLException {
-        List<Ticket> tickets = getAllTickets();
+    public boolean addTicket(int customerId, int eventId) throws Exception {
+        List<Ticket> tickets = appLogicManager.getAllTickets();
         boolean token = false;
 
 
@@ -43,10 +33,10 @@ public class AddNewTicketModel {
             if (tickets.size() != 0) {
                 Ticket ticket = new Ticket(tickets
                         .get(tickets.size() - 1).getTicketId() + 1, customerId, eventId);
-                this.ticketDAO.addNewTicket(ticket);
+                appLogicManager.addNewTicket(ticket);
             }else {
                 Ticket ticket = new Ticket(1, customerId, eventId);
-                this.ticketDAO.addNewTicket(ticket);
+                appLogicManager.addNewTicket(ticket);
             }
             return token;
         } else {

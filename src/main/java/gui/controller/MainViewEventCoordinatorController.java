@@ -4,6 +4,7 @@ import be.Customer;
 import be.Event;
 import be.User;
 import gui.model.AddManagerModel;
+import gui.model.CreateEventModel;
 import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
@@ -80,6 +81,8 @@ public class MainViewEventCoordinatorController implements Initializable {
     public void addEventHandle(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/CreateEvent.fxml"));
         Parent root = loader.load();
+        CreateEventController controller = loader.getController();
+        controller.setMainModel(model);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
@@ -87,7 +90,7 @@ public class MainViewEventCoordinatorController implements Initializable {
         stage.show();
     }
 
-    public void delEventHandle(ActionEvent actionEvent) throws SQLException {
+    public void delEventHandle(ActionEvent actionEvent) throws Exception {
         if (eventTable != null && eventTable.getSelectionModel().getSelectedItem().getName() != null) {
             String index = eventTable.getSelectionModel().getSelectedItem().getName();
             int eventId = eventTable.getSelectionModel().getSelectedItem().getId();
@@ -99,6 +102,8 @@ public class MainViewEventCoordinatorController implements Initializable {
     public void handleCreateTicket(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/GenerateTicketView.fxml"));
         Parent root = loader.load();
+        GenerateTicketController controller = loader.getController();
+        controller.setMainModel(model);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);

@@ -46,18 +46,16 @@ public class CreateEventController implements Initializable {
         model = new CreateEventModel(mvm) ;
     }
 
-    public void createEvent(ActionEvent actionEvent) throws SQLException {
+    public void createEvent(ActionEvent actionEvent) throws Exception {
         LocalDateTime startDatetimeValue = startDateTime.getDateTimeValue();
         LocalDateTime endDateTimeValue = endDateTime.getDateTimeValue();
 
-     //   System.out.println(startDateTime.getDateTimeValue());
         model.createEvent(nameField.getText(),typeField.getText(), startDatetimeValue,endDateTimeValue,locationField.getText());
         Stage stage = (Stage) createBtn.getScene().getWindow();
         stage.close();
     }
 
     public void close(){
-
         Stage stage = (Stage) closeB.getScene().getWindow();
         stage.close();
     }

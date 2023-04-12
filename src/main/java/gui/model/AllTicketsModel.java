@@ -2,6 +2,7 @@ package gui.model;
 
 import be.Event;
 import be.Ticket;
+import bll.AppLogicManager;
 import dal.dao.TicketDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,10 +16,10 @@ public class AllTicketsModel {
 
     }
 
-    public ObservableList<Ticket> loadFromDB(){
-        TicketDAO ticketDAO=new TicketDAO();
+    public ObservableList<Ticket> loadFromDB() throws Exception {
+        AppLogicManager appLogicManager = new AppLogicManager();
         this.tickets.clear();
-        this.tickets.addAll(ticketDAO.getAllTickets());
+        this.tickets.addAll(appLogicManager.getAllTickets());
         return this.tickets;
     }
 

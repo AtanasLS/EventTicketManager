@@ -3,6 +3,7 @@ package gui.model;
 import be.Event;
 import be.User;
 import be.UserEvent;
+import bll.AppLogicManager;
 import dal.dao.EventDAO;
 import dal.dao.UserDAO;
 import dal.dao.UserToEventDAO;
@@ -13,20 +14,19 @@ import java.util.List;
 
 public class SetManagerModel {
 
-    private UserDAO userDAO =new UserDAO();
-    private EventDAO eventDAO =new EventDAO();
-    private UserToEventDAO userToEventDAO = new UserToEventDAO();
+    private AppLogicManager appLogicManager;
 
     MainViewModel mainViewModel;
 
     public SetManagerModel(MainViewModel mainViewModel) {
+        this.appLogicManager = new AppLogicManager();
         this.mainViewModel = mainViewModel;
     }
 
 
 
 
-    public boolean setManagerToEvent(User user,Event event) throws SQLException {
+    public boolean setManagerToEvent(User user,Event event) throws Exception {
 
         final boolean[] token = new boolean[1];
 
@@ -39,7 +39,7 @@ public class SetManagerModel {
         });
 
         if (!token[0]) {
-            userToEventDAO.addNewUserEvent(userEvent);
+            appLogicManager.addNewUserEvent(userEvent);
             mainViewModel.addUserEvent(userEvent);
             return token[0];
         }else {

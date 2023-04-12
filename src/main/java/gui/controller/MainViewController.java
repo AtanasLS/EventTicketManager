@@ -95,7 +95,7 @@ public class MainViewController implements Initializable {
     }
 
 
-    public void seeAllTickets(ActionEvent actionEvent) throws IOException, InterruptedException {
+    public void seeAllTickets(ActionEvent actionEvent) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AllTickets.fxml"));
         Parent root = loader.load();
         AllTicketsController ctrl = loader.getController();
@@ -141,7 +141,7 @@ public class MainViewController implements Initializable {
         stage.show();
     }
 
-    public void delManagerHandle(ActionEvent actionEvent) throws SQLException {
+    public void delManagerHandle(ActionEvent actionEvent) throws Exception {
 
         if (managerTable != null && managerTable.getSelectionModel().getSelectedItem() != null) {
             String index = managerTable.getSelectionModel().getSelectedItem().getUsername();
@@ -149,7 +149,7 @@ public class MainViewController implements Initializable {
         }
     }
 
-    public void delEventHandle(ActionEvent actionEvent) throws SQLException {
+    public void delEventHandle(ActionEvent actionEvent) throws Exception {
         if (eventTable != null && eventTable.getSelectionModel().getSelectedItem().getName() != null) {
             String index = eventTable.getSelectionModel().getSelectedItem().getName();
             int eventId = eventTable.getSelectionModel().getSelectedItem().getId();

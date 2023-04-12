@@ -58,7 +58,7 @@ public class SetManagerController implements Initializable {
         eventBox.setItems( eventsList);
     }
 
-    public void setBtn(ActionEvent actionEvent) throws SQLException {
+    public void setBtn(ActionEvent actionEvent) throws Exception {
         User user= null;
         Event event= null;
 

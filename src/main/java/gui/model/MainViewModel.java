@@ -4,6 +4,7 @@ import be.Customer;
 import be.Event;
 import be.User;
 import be.UserEvent;
+import bll.AppLogicManager;
 import dal.dao.*;
 import gui.controller.MainViewController;
 
@@ -19,6 +20,8 @@ public class MainViewModel {
 
         private User loggedInUser ;
 
+        private AppLogicManager appLogicManager;
+
         private final ObservableList<User> allUsers;
         private final ObservableList<User> allManagers;
         private final ObservableList<Event> allEvents;
@@ -27,6 +30,7 @@ public class MainViewModel {
         private final ObservableList<Event> userToEventsNames;
 
         public MainViewModel(){
+            this.appLogicManager = new AppLogicManager();
         this.allUsers = FXCollections.observableArrayList();
         this.allEvents = FXCollections.observableArrayList();
         this.allManagers = FXCollections.observableArrayList();
@@ -36,19 +40,15 @@ public class MainViewModel {
         this.loggedInUser = null;
         }
 
-        public void loadFromDB(){
-        UserDAO userDAO = new UserDAO();
+        public void loadFromDB() throws Exception {
         this.allUsers.clear();
-        this.allUsers.addAll(userDAO.getAllUsers());
-        EventDAO eventDAO = new EventDAO();
+        this.allUsers.addAll(appLogicManager.getAllUsers());
         this.allEvents.clear();
-        this.allEvents.addAll(eventDAO.getAllEvents());
-        UserToEventDAO userToEventDAO = new UserToEventDAO();
+        this.allEvents.addAll(appLogicManager.getAllEvents());
         this.allUserEvents.clear();
-        this.allUserEvents.addAll(userToEventDAO. getUserToEvent());
-        CustomerDAO customerDAO = new CustomerDAO();
+        this.allUserEvents.addAll(appLogicManager.getAllUserEvents());
         this.allCustomers.clear();
-        this.allCustomers.addAll(customerDAO.getAllCustomers());
+        this.allCustomers.addAll(appLogicManager.getAllCustomers());
         }
 
         public ObservableList<User> getAllUsers(){
@@ -67,8 +67,8 @@ public class MainViewModel {
     }
     public ObservableList<User> getAllManagers(){return allManagers;}
 
-    public void deleteUser(String index) throws SQLException {
-        UserDAO.removeUser(index);
+    public void deleteUser(String index) throws Exception {
+        appLogicManager.removeUser(index);
         User userToRemoveFromAllUsers = null;
         for (User u:getAllManagers()) {
             if (u.getUsername().equals(index)){
@@ -84,8 +84,7 @@ public class MainViewModel {
     }
 
     public ObservableList<Event> getAllUserToEventsName(User selectedUser){
-
-
+            this.userToEventsNames.clear(); 
             for (Event e: getAllEvents()) {
                 for (UserEvent uToE: getAllUserEvents()) {
                     if (selectedUser.getId() == uToE.getUserId() && e.getId() == uToE.getEventId()){
@@ -107,10 +106,10 @@ public class MainViewModel {
 
         //deletes an Event from the table and from the userEvent table bc if there is no event there is
         // no user assigned to that event
-        public void deleteEvent(int eventId,String index) throws SQLException {
-            TicketDAO.removeTicketWithThisEvent(eventId);
-                UserToEventDAO.deleteEventForAllUsers(eventId);
-                EventDAO.removeEvent(index);
+        public void deleteEvent(int eventId,String index) throws Exception {
+            appLogicManager.removeTicketWithThisEvent(eventId);
+                appLogicManager.removeEventForAllUsers(eventId);
+                appLogicManager.removeEvent(index);
                 Event eventToRemove= null;
             for (Event e:getAllEvents()) {
                 if (e.getName().equals(index)){
@@ -149,8 +148,8 @@ public class MainViewModel {
         public User getLoggedInUser(){
             return loggedInUser;
         }
-    public User getUser(String username){
-        List<User> allUsers = UserDAO.getAllUsers();
+    public User getUser(String username) throws Exception {
+        List<User> allUsers = appLogicManager.getAllUsers();
         for (User u:allUsers) {
             if (u.getUsername().equals(username)){
                 return u;
@@ -159,7 +158,8 @@ public class MainViewModel {
         return null;
     }
 
-         /*   idk its use -
+         /*
+         !?! idk its use !?!
          TODO - maybe delete later if there is no use for it ???
         public User getUser(String username){
         List<User> allUsers = UserDAO.getAllUsers();

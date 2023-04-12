@@ -95,6 +95,13 @@ public class AppLogicManager {
             throw new Exception("Could not remove this ticket! Check the connection or the query!");
         }
     }
+    public void removeTicketWithThisEvent(int eventID) throws Exception{
+        try {
+            dataManager.removeTicketWithThisEvent(eventID);
+        }catch (Exception exception){
+            throw new Exception("Could not remove this ticket! Check the connection or the query!");
+        }
+    }
     public ObservableList<UserEvent> getAllUserEvents() throws Exception{
         try {
             return dataManager.getUserToEvent();

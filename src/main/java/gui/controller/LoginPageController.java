@@ -32,11 +32,15 @@ public class LoginPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
          model = new MainViewModel();
-         model.loadFromDB();
+        try {
+            model.loadFromDB();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
-    public void logIn(ActionEvent actionEvent) {
+    public void logIn(ActionEvent actionEvent) throws Exception {
         if (model.checkIfUserExist(usernameField.getText(), passwordField.getText())) {
             User loggedInUser = model.getUser(usernameField.getText());
             if (loggedInUser.getType().equals("Event Coordinator")) {

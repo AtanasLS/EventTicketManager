@@ -37,7 +37,7 @@ public class AddManagerController implements Initializable {
     }
 
 
-    public void addManager(ActionEvent actionEvent) throws SQLException {
+    public void addManager(ActionEvent actionEvent) throws Exception {
 
         if (model.addManager(usernameField.getText(),passwordField.getText(),"Event Coordinator")){
             Alert alert = new Alert(Alert.AlertType.ERROR, "This name or password already exists!");

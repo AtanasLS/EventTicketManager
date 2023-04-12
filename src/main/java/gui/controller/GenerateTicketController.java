@@ -10,7 +10,9 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.qrcode.QRCodeWriter;
+import gui.model.AddManagerModel;
 import gui.model.AddNewTicketModel;
+import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import javafx.beans.binding.ObjectExpression;
 import javafx.collections.FXCollections;
@@ -58,9 +60,13 @@ public class GenerateTicketController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model = new AddNewTicketModel();
-        this.customers=model.getAllCustomers();
-        this.events=model.getAllEvents();
+
+    }
+
+    public void setMainModel(MainViewModel mvm){
+        model = new AddNewTicketModel(mvm);
+        this.customers=mvm.getAllCustomers();
+        this.events = mvm.getAllEvents();
 
         for (Customer customer:customers) {
             this.allCustomersNames.add(customer.getName());
@@ -72,12 +78,11 @@ public class GenerateTicketController implements Initializable {
         }
         eventsComboBox.setItems( allEventsName);
         customerComboBox.setItems( allCustomersNames);
-
     }
 
 
 
-    public void handleGenerateButton(ActionEvent actionEvent) throws SQLException, IOException, WriterException {
+    public void handleGenerateButton(ActionEvent actionEvent) throws Exception {
 
         Customer customer = null;
         Event event= null;

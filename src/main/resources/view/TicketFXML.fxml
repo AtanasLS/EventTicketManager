@@ -22,7 +22,7 @@
             <Font name="System Italic" size="25.0" />
          </font>
       </Label>
-      <Label fx:id="startEndLbl" layoutX="10.0" layoutY="129.0" prefHeight="30.0" prefWidth="110.0" styleClass="shadow" text="Label" textFill="WHITE">
+      <Label fx:id="startEndLbl" layoutX="10.0" layoutY="129.0" prefHeight="30.0" prefWidth="259.0" styleClass="shadow" text="Label" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -32,12 +32,12 @@
             <Font name="System Bold" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="startEndLbl1" layoutX="10.0" layoutY="159.0" prefHeight="30.0" prefWidth="110.0" styleClass="shadow" text="Label" textFill="WHITE">
+      <Label fx:id="endLbl1" layoutX="10.0" layoutY="159.0" prefHeight="30.0" prefWidth="259.0" styleClass="shadow" text="Label" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="locationLbl1" layoutX="10.0" layoutY="224.0" prefHeight="48.0" prefWidth="150.0" styleClass="shadow" text="Label" textFill="WHITE">
+      <Label fx:id="email" layoutX="10.0" layoutY="224.0" prefHeight="48.0" prefWidth="150.0" styleClass="shadow" text="Label" textFill="WHITE">
          <font>
             <Font name="System Italic" size="15.0" />
          </font>

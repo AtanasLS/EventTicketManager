@@ -49,7 +49,7 @@ public class CreateEventController implements Initializable {
     public void createEvent(ActionEvent actionEvent) throws Exception {
         LocalDateTime startDatetimeValue = startDateTime.getDateTimeValue();
         LocalDateTime endDateTimeValue = endDateTime.getDateTimeValue();
-
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY HH:MM");
         model.createEvent(nameField.getText(),typeField.getText(), startDatetimeValue,endDateTimeValue,locationField.getText());
         Stage stage = (Stage) createBtn.getScene().getWindow();
         stage.close();

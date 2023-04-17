@@ -67,7 +67,7 @@ public class GenerateTicketController implements Initializable {
     public void setMainModel(MainViewModel mvm){
         model = new AddNewTicketModel(mvm);
         this.customers=mvm.getAllCustomers();
-        this.events = mvm.getAllEvents();
+        this.events = mvm.getAllUserToEventsName(mvm.getLoggedInUser());
 
         for (Customer customer:customers) {
             this.allCustomersNames.add(customer.getName());

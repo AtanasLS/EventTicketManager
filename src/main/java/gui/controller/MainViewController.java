@@ -7,6 +7,8 @@ import gui.model.AddManagerModel;
 import gui.model.CreateEventModel;
 import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,13 +24,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import javax.naming.Name;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
@@ -39,11 +46,10 @@ public class MainViewController implements Initializable {
     public TableView <Event> eventTable;
     @FXML
     public TableView <User> managerTable;
-    public MFXButton refreshTablesBtn;
     @FXML
     private TableColumn<Event, String> eventNameColumn, typeColumn, locationColumns;
     @FXML
-    private TableColumn<Event, Date> startDateColumn, endDateColumn;
+    private TableColumn<Event, String> startDateColumn, endDateColumn;
     @FXML
     private TableColumn<User, String> managerNameColumn;
 
@@ -63,15 +69,28 @@ public class MainViewController implements Initializable {
         setEventTable(model.getAllEvents());
          nameLabel.setText("Welcome "+model.getLoggedInUser().getUsername() + "! Position: " + model.getLoggedInUser().getType());
         setManagerTable();
-        refreshTablesBtn.setOnAction(refreshTablesBtn.getOnAction());
+
 
     }
 
     public void setEventTable(ObservableList<Event> events){
         eventNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
-        startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-        endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+
+        startDateColumn.setCellValueFactory(
+                event -> {
+                    SimpleStringProperty property = new SimpleStringProperty();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY HH:MM");
+                    property.setValue(formatter.format(event.getValue().getStartDate()));
+                    return property;
+                });
+        endDateColumn.setCellValueFactory(
+                event -> {
+                    SimpleStringProperty property = new SimpleStringProperty();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY HH:MM");
+                    property.setValue(formatter.format(event.getValue().getStartDate()));
+                    return property;
+                });
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
         eventTable.setItems(events);
     }
@@ -158,11 +177,7 @@ public class MainViewController implements Initializable {
 
     }
 
-    public void handleRefreshTables(ActionEvent actionEvent) {
-        setManagerTable();
-        setEventTable(model.getAllEvents());
 
-    }
 
     public void handleLogOut(ActionEvent actionEvent) throws IOException {
         ((Node) ((Button) actionEvent.getSource())).getScene().getWindow().hide();

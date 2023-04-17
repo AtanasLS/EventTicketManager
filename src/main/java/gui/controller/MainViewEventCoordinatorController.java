@@ -58,6 +58,9 @@ public class MainViewEventCoordinatorController implements Initializable {
         setCustomersTableView();
         setEventTable();
         nameLabel.setText("Welcome "+model.getLoggedInUser().getUsername() + "! Position: " + model.getLoggedInUser().getType());
+        if (model.getLoggedInUser().getType().equals("Admin")){
+            changeBtn.setVisible(true);
+        }
     }
 
     public void setEventTable() {
@@ -134,9 +137,16 @@ public class MainViewEventCoordinatorController implements Initializable {
 
         stage.show();
     }
-    public void handleRefreshTables(ActionEvent actionEvent) {
-        setCustomersTableView();
-        setEventTable();
+    public void handleViewAllTickets(ActionEvent actionEvent) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/AllTickets.fxml"));
+        Parent root = loader.load();
+        AllTicketsController ctrl = loader.getController();
+        ctrl.setTicketModel(model);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("All Tickets");
+        stage.show();
     }
 
     public void handleChangeView(ActionEvent actionEvent) throws IOException {
@@ -147,6 +157,7 @@ public class MainViewEventCoordinatorController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
+        changeBtn.setVisible(true);
         stage.show();
         MainViewController controller = loader.getController();
         controller.setMainModel(model);

@@ -18,9 +18,9 @@
                 <Font name="System Bold" size="19.0" />
             </font>
         </Label>
-        <TableView fx:id="eventTable" layoutX="23.0" layoutY="108.0" prefHeight="342.0" prefWidth="466.0" styleClass="table">
+        <TableView fx:id="eventTable" layoutX="25.0" layoutY="108.0" prefHeight="342.0" prefWidth="466.0" style="-fx-font-weight: bold;" styleClass="table">
             <columns>
-                <TableColumn fx:id="eventNameColumn" prefWidth="97.59997177124023" text="Name" />
+                <TableColumn fx:id="eventNameColumn" prefWidth="97.59997177124023" style="-fx-font-weight: bold;" text="Name" />
                 <TableColumn fx:id="typeColumn" prefWidth="75.199951171875" text="Type" />
             <TableColumn fx:id="startDateColumn" prefWidth="99.20002746582031" text="Start Date" />
             <TableColumn fx:id="endDateColumn" prefWidth="104.79998779296875" text="End Date" />
@@ -29,7 +29,7 @@
         </TableView>
         <TableView fx:id="managerTable" layoutX="620.0" layoutY="108.0" onMouseClicked="#handleShowAssignedEvents" prefHeight="342.0" prefWidth="254.0" styleClass="table">
             <columns>
-                <TableColumn fx:id="managerNameColumn" prefWidth="253.60001220703126" text="Manager's Names" />
+                <TableColumn fx:id="managerNameColumn" prefWidth="253.60001220703126" style="-fx-font-weight: bold;" text="Manager's Names" />
             </columns>
         </TableView>
         <MFXButton fx:id="addManBtn" layoutX="623.0" layoutY="456.0" onAction="#addManagerHandle" prefHeight="40.0" prefWidth="108.0" styleClass="button" text="Add Manager" />

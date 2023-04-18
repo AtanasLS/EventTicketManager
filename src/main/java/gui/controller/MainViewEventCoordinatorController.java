@@ -7,6 +7,7 @@ import gui.model.AddManagerModel;
 import gui.model.CreateEventModel;
 import gui.model.MainViewModel;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +25,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -40,16 +42,10 @@ public class MainViewEventCoordinatorController implements Initializable {
     @FXML TableView<Customer> customersView;
     @FXML TableColumn<Customer, String> customersName, customersEmail;
     @FXML
-    private TableColumn<Event, Date> startDateColumn, endDateColumn;
+    private TableColumn<Event, String> startDateColumn, endDateColumn;
     private MainViewModel model;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /*
-            model.loadFromDB();
-            setEventTable();
-            setCustomersTableView();
-
-         */
     }
 
     public void setMainModel(MainViewModel mvm){
@@ -66,10 +62,22 @@ public class MainViewEventCoordinatorController implements Initializable {
     public void setEventTable() {
         eventNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
-        startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-        endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+        startDateColumn.setCellValueFactory(
+                event -> {
+                    SimpleStringProperty property = new SimpleStringProperty();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY HH:MM");
+                    property.setValue(formatter.format(event.getValue().getStartDate()));
+                    return property;
+                });
+        endDateColumn.setCellValueFactory(
+                event -> {
+                    SimpleStringProperty property = new SimpleStringProperty();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY HH:MM");
+                    property.setValue(formatter.format(event.getValue().getStartDate()));
+                    return property;
+                });
         locationColumns.setCellValueFactory(new PropertyValueFactory<>("location"));
-        System.out.println(model.getLoggedInUser().getUsername());
+
         if (model.getLoggedInUser().getType().equals("Event Coordinator")) {
             eventTable.setItems(model.getAllUserToEventsName(model.getLoggedInUser()));
         }else if (model.getLoggedInUser().getType().equals("Admin")){
